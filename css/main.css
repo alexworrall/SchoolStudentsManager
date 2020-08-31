@@ -59,6 +59,8 @@ textarea {
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
     margin: 0;
+    min-width: 482px;
+    width: auto !important;  /* Firefox will set width as auto */
 }
 
 .wrapper {
@@ -168,13 +170,13 @@ body {
 
 .footer-container{
     border-top: 5px solid #0a0a0a;
+    margin-top: 20px;
 }
 
 .header-container,
 .footer-container,
 .main aside {
     background: #D40000;
-    margin-top: 20px;
 }
 
 .title {
@@ -250,6 +252,10 @@ nav a:hover {
    Author's custom styles
    ========================================================================== */
 
+.mainMenu{
+    max-width: 482px;
+}
+
 .headerLogo{
     max-width: 100%;
     box-sizing: border-box;
@@ -261,6 +267,7 @@ nav a:hover {
     height: 75px;
     margin-top: 20px;
     margin-left: -50px;
+    
 }
 
 .viewStudentListButton{
