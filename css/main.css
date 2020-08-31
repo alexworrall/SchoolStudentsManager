@@ -91,6 +91,7 @@ body {
 .header-container li a {
     display: block;
     text-decoration: none;
+    padding: 20px 10px;
 }
   
   .header-container li a:hover,
@@ -275,8 +276,6 @@ nav a:hover {
     INTERMEDIATE: Menu
    ==================== */
 
-
-
 /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
@@ -312,8 +311,8 @@ nav{
 .header-container li {
     float: left;
 }
-  .header-container li a {
-    padding: 20px 30px;
+.header-container li a {
+    padding: 20px 10px;
 }
   .header-container .menu {
     clear: none;
@@ -336,6 +335,16 @@ nav{
         float: right;
         width: 28%;
         margin-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 910px) {
+
+    /* ===============
+        Maximal Width
+       =============== */
+    .header-container li a {
+        padding: 20px 30px;
     }
 }
 
