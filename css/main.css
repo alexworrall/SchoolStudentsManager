@@ -307,19 +307,23 @@ nav a:hover {
 /* ============
     WIDE: Menu
    ============ */
+nav{
+    float: right;
+}
+   
 .header-container li {
     float: left;
-  }
+}
   .header-container li a {
     padding: 20px 10px;
-  }
+}
   .header-container .menu {
     clear: none;
     max-height: none;
-  }
+}
   .header-container .menu-icon {
     display: none;
-  }
+}
 
 /* ============
     WIDE: Main
