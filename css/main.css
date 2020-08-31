@@ -58,6 +58,7 @@ textarea {
 
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    margin: 0;
 }
 
 .wrapper {
@@ -82,13 +83,10 @@ body {
     padding: 0;
     list-style: none;
     overflow: hidden;
-    background-color: #fff;
 }
 
 .header-container li a {
     display: block;
-    padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
     text-decoration: none;
 }
   
@@ -148,7 +146,7 @@ body {
   }
   
   .header-container .menu-btn:checked ~ .menu {
-    max-height: 240px;
+    max-height: 80%;
   }
   
   .header-container .menu-btn:checked ~ .menu-icon .navicon {
@@ -168,15 +166,14 @@ body {
     top: 0;
   }
 
-.footer-container,
-.main aside {
-    border-top: 20px solid #e44d26;
+.footer-container{
+    border-top: 5px solid #0a0a0a;
 }
 
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #D40000;
 }
 
 .title {
@@ -187,7 +184,37 @@ body {
 /* ==============
     MOBILE: Menu
    ============== */
+   
+nav{
+    margin-bottom: 10px;
+}
 
+   nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav a {
+    display: block;
+    padding: 15px 0;
+
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    color: white;
+    background: #D40000;
+}
+
+nav a:hover,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
 
 
 /* ==============
@@ -195,11 +222,12 @@ body {
    ============== */
 
 .main {
-    padding: 30px 0;
+    padding: 70px 0;
 }
 
 .main article h1 {
     font-size: 2em;
+    margin-right: 20px;
 }
 
 .main aside {
@@ -283,7 +311,7 @@ body {
     float: left;
   }
   .header-container li a {
-    padding: 20px 30px;
+    padding: 20px 10px;
   }
   .header-container .menu {
     clear: none;
@@ -305,6 +333,7 @@ body {
     .main aside {
         float: right;
         width: 28%;
+        margin-top: 80px;
     }
 }
 
@@ -318,6 +347,11 @@ body {
         width: 1026px; /* 1140px - 10% for margins */
         margin: 0 auto;
     }
+
+    .header-container li a {
+        padding: 20px 30px;
+    }
+
 }
 
 /* ==========================================================================
