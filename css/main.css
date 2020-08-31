@@ -427,6 +427,23 @@ nav a:hover {
         bottom: 0;
     }
 
+    .largeMainMenuButton{
+        background-color: #D40000;
+        border: 5px solid white;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        cursor: pointer;
+        border-radius: 16px;
+        width: 400px;
+        height: 90px;
+        margin: 60px auto;
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+
 
 }
 
