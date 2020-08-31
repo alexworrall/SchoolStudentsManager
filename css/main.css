@@ -254,6 +254,7 @@ nav a:hover {
 
 .mainMenu{
     max-width: 482px;
+    visibility: visible;
 }
 
 .headerLogo{
@@ -329,8 +330,6 @@ nav a:hover {
 
 
 
-
-
 /* ==========================================================================
    Media Queries
    ========================================================================== */
@@ -356,9 +355,9 @@ nav a:hover {
 
 @media only screen and (min-width: 768px) {
 
-/* ====================
+    /* ====================
     WIDE: CSS3 Effects
-   ==================== */
+    ==================== */
 
     .header-container,
     .main aside {
@@ -367,29 +366,29 @@ nav a:hover {
                 box-shadow: 0 5px 10px #aaa;
     }
 
-/* ============
-    WIDE: Menu
-   ============ */
-nav{
-    float: right;
-}
-.header-container li {
-    float: left;
-}
-.header-container li a {
-    padding: 20px 10px;
-}
-  .header-container .menu {
-    clear: none;
-    max-height: none;
-}
-  .header-container .menu-icon {
-    display: none;
-}
+    /* ============
+        WIDE: Menu
+    ============ */
+    nav{
+        float: right;
+    }
+    .header-container li {
+        float: left;
+    }
+    .header-container li a {
+        padding: 20px 10px;
+    }
+    .header-container .menu {
+        clear: none;
+        max-height: none;
+    }
+    .header-container .menu-icon {
+        display: none;
+    }
 
-/* ============
+    /* ============
     WIDE: Main
-   ============ */
+    ============ */
 
     .main article {
         float: left;
@@ -401,6 +400,12 @@ nav{
         width: 28%;
         margin-top: 80px;
     }
+
+    .mainMenu{
+        visibility: hidden;
+    }
+
+
 }
 
 @media only screen and (min-width: 910px) {
