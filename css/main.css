@@ -272,8 +272,11 @@ nav a:hover {
     height: 75px;
     margin-top: 20px;
     margin-left:100%;
-    animation-name: mainMenuEntrance;
-    animation-duration: 1s;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
@@ -282,8 +285,11 @@ nav a:hover {
     height: 75px;
     margin-top: 40px;
     margin-left:100%;
-    animation-name: mainMenuEntrance;
-    animation-duration: 1s;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
     animation-delay: .5s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
@@ -293,8 +299,11 @@ nav a:hover {
     height: 75px;
     margin-top: 40px;
     margin-left:100%;
-    animation-name: mainMenuEntrance;
-    animation-duration: 1s;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
     animation-delay: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
@@ -304,14 +313,50 @@ nav a:hover {
     height: 75px;
     margin-top: 40px;
     margin-left:100%;
-    animation-name: mainMenuEntrance2;
-    animation-duration: 1s;
+    -webkit-animation: mainMenuEntrance2 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntranc2 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance2 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance2 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance2 1s;
     animation-delay: 1.5s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
 }
 
+/* Keyframes for animations, included some for legacy browsers just in case */
 @keyframes mainMenuEntrance{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -30px;
+    }
+}
+@-moz-keyframes mainMenuEntrance{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -30px;
+    }
+}
+@-webkit-keyframes mainMenuEntrance{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -30px;
+    }
+}
+@-ms-keyframes mainMenuEntrance{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -30px;
+    }
+}
+@-o-keyframes mainMenuEntrance{
     from{
         margin-left:100%;
     }
@@ -321,6 +366,38 @@ nav a:hover {
 }
 
 @keyframes mainMenuEntrance2{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -90px;
+    }
+}
+@-moz-keyframes mainMenuEntrance2{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -90px;
+    }
+}
+@-webkit-keyframes mainMenuEntrance2{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -90px;
+    }
+}
+@-ms-keyframes mainMenuEntrance2{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -90px;
+    }
+}
+@-o-keyframes mainMenuEntrance2{
     from{
         margin-left:100%;
     }
