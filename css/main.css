@@ -262,6 +262,7 @@ nav a:hover {
     box-sizing: border-box;
     vertical-align: bottom;
     margin-left: 0px;
+    visibility: visible;
 }
 
 .generateFeedbackButton{
@@ -325,6 +326,8 @@ nav a:hover {
     }
 }
 
+}
+
 
 
 
@@ -353,7 +356,7 @@ nav a:hover {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 750px) {
 
     /* ====================
     WIDE: CSS3 Effects
@@ -402,6 +405,10 @@ nav a:hover {
     }
 
     .mainMenu{
+        visibility: hidden;
+    }
+
+    .headerLogo{
         visibility: hidden;
     }
 
