@@ -266,30 +266,63 @@ nav a:hover {
 .generateFeedbackButton{
     height: 75px;
     margin-top: 20px;
-    margin-left: -50px;
-    
+    margin-left:100%;
+    animation-name: mainMenuEntrance;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 .viewStudentListButton{
     height: 75px;
     margin-top: 40px;
-    margin-left: -50px;
+    margin-left:100%;
+    animation-name: mainMenuEntrance;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 .viewFeedbackListButton{
     height: 75px;
     margin-top: 40px;
-    margin-left: -50px;
+    margin-left:100%;
+    animation-name: mainMenuEntrance;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
 .viewSchoolCoordinatorsButton{
     height: 75px;
     margin-top: 40px;
-    margin-left: -90px;
+    margin-left:100%;
+    animation-name: mainMenuEntrance2;
+    animation-duration: 1s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
 }
 
+@keyframes mainMenuEntrance{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -30px;
+    }
+}
 
-
+@keyframes mainMenuEntrance2{
+    from{
+        margin-left:100%;
+    }
+    to{
+        margin-left: -90px;
+    }
+}
 
 
 
