@@ -327,7 +327,7 @@ nav a:hover {
 }
 
 .mainMenuLargeScreen{
-    visibility: hidden;
+    display: none;
 }
 
 
@@ -405,15 +405,19 @@ nav a:hover {
     }
 
     .mainMenu{
-        visibility: hidden;
+        display: none;
     }
 
     .headerLogo{
-        visibility: hidden;
+        display: none;
     }
 
     .mainMenuLargeScreen{
         visibility: visible;
+        background: url("../img/TAFESABackgroundImageLarge.jpg") no-repeat 0 0;
+        background-size: auto;
+        width: 100px;
+        height: 100px;
     }
 
 
