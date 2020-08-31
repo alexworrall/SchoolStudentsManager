@@ -171,6 +171,9 @@ body {
 .footer-container{
     border-top: 5px solid #0a0a0a;
     margin-top: 20px;
+    position: absolute;
+    width: 100%;
+    min-width: 482px;
 }
 
 .header-container,
@@ -413,11 +416,15 @@ nav a:hover {
     }
 
     .mainMenuLargeScreen{
-        visibility: visible;
+        display: block;
+    }
+
+    body{
         background: url("../img/TAFESABackgroundImageLarge.jpg") no-repeat 0 0;
-        background-size: auto;
-        width: 100px;
-        height: 100px;
+    }
+
+    .footer-container{
+        bottom: 0;
     }
 
 
