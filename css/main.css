@@ -180,6 +180,7 @@ body {
 }
 
 .title {
+    float: left;
     color: white;
 }
 
@@ -187,33 +188,7 @@ body {
     MOBILE: Menu
    ============== */
 
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
 
-nav a {
-    display: block;
-    margin-bottom: 10px;
-    padding: 15px 0;
-
-    text-align: center;
-    text-decoration: none;
-    font-weight: bold;
-
-    color: white;
-    background: #e44d26;
-}
-
-nav a:hover,
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
 
 /* ==============
     MOBILE: Main
@@ -273,21 +248,7 @@ nav a:hover {
     INTERMEDIATE: Menu
    ==================== */
 
-    nav a {
-        float: left;
-        width: 27%;
-        margin: 0 1.7%;
-        padding: 25px 2%;
-        margin-bottom: 0;
-    }
 
-    nav li:first-child a {
-        margin-left: 0;
-    }
-
-    nav li:last-child a {
-        margin-right: 0;
-    }
 
 /* ========================
     INTERMEDIATE: IE Fixes
@@ -318,15 +279,19 @@ nav a:hover {
 /* ============
     WIDE: Menu
    ============ */
-
-    .title {
-        float: left;
-    }
-
-    nav {
-        float: right;
-        width: 38%;
-    }
+.header-container li {
+    float: left;
+  }
+  .header-container li a {
+    padding: 20px 30px;
+  }
+  .header-container .menu {
+    clear: none;
+    max-height: none;
+  }
+  .header-container .menu-icon {
+    display: none;
+  }
 
 /* ============
     WIDE: Main
