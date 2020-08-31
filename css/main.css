@@ -326,9 +326,9 @@ nav a:hover {
     }
 }
 
+.mainMenuLargeScreen{
+    visibility: hidden;
 }
-
-
 
 
 
@@ -410,6 +410,10 @@ nav a:hover {
 
     .headerLogo{
         visibility: hidden;
+    }
+
+    .mainMenuLargeScreen{
+        visibility: visible;
     }
 
 
