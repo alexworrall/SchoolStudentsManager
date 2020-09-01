@@ -1,8 +1,10 @@
 .headerLogo{
-    max-width: 100%;
     box-sizing: border-box;
     vertical-align: bottom;
     margin-left: 0px;
     visibility: visible;
     float: left;
+    margin: 10px 10px 0px 0px;
+    width: 50px;
+    height: 50px;
 }
