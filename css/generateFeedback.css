@@ -93,8 +93,16 @@
     font-family: sans-serif;
     outline: 0;
     transition: .2s;
-    margin-top: 20px;
+    margin-top: 2px;
     margin-bottom: 10px;
+  }
+
+  .formLabel{
+      margin-top:10px;
+  }
+
+  .dropDown{
+      margin-top: 10px;
   }
 
   .form-select {
@@ -108,8 +116,7 @@
 	width: 80%;
 	max-width: 100%;
 	box-sizing: border-box;
-    margin: 0;
-    margin-top: 20px;
+    margin-top: 2px;
 	border: 1px solid #aaa;
 	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 	border-radius: .5em;
@@ -147,7 +154,7 @@
   .form > .button {
     padding: 12px 10px;
     border: 0;
-    background: #211545;
+    background: #D40000;
     border-radius: 3px;
     margin-top: 10px;
     color: #fff;
@@ -165,35 +172,11 @@
     animation-fill-mode: both;
   }
   
-  .a1 {
-    -webkit-animation-delay: .9s;
-            animation-delay: .9s;
-  }
-  
-  .a2 {
-    -webkit-animation-delay: 1s;
-            animation-delay: 1s;
-  }
-  
-  .a3 {
-    -webkit-animation-delay: 1.2s;
-            animation-delay: 1.2s;
-  }
-  
-  .a4 {
-    -webkit-animation-delay: 1.4s;
-            animation-delay: 1.4s;
-  }
-  
   .a5 {
-    -webkit-animation-delay: 1.6s;
-            animation-delay: 1.6s;
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
   }
-  
-  .a6 {
-    -webkit-animation-delay: 1.8s;
-            animation-delay: 1.8s;
-  }
+
   
   @-webkit-keyframes fadeInUp {
     from {
@@ -220,28 +203,6 @@
       opacity: 1;
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
-    }
-  }
-  @-webkit-keyframes left {
-    0% {
-      opacity: 0;
-      width: 0;
-    }
-    100% {
-      opacity: 1;
-      padding: 20px 40px;
-      width: 100%;
-    }
-  }
-  @keyframes left {
-    0% {
-      opacity: 0;
-      width: 0;
-    }
-    100% {
-      opacity: 1;
-      padding: 20px 40px;
-      width: 100%;
     }
   }
 
@@ -286,28 +247,6 @@
           opacity: 1;
           -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-        }
-      }
-      @-webkit-keyframes left {
-        0% {
-          opacity: 0;
-          width: 40%;
-        }
-        100% {
-          opacity: 1;
-          padding: 20px 40px;
-          width: 70%;
-        }
-      }
-      @keyframes left {
-        0% {
-          opacity: 0;
-          width: 40%;
-        }
-        100% {
-          opacity: 1;
-          padding: 20px 40px;
-          width: 70%;
         }
       }
   }

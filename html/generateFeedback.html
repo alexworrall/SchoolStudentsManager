@@ -41,29 +41,29 @@
             <div class="main wrapper clearfix">
                         <form class="form">
                             <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
-                            <div class="animation a5">
-                                <label for="attendeeType">Lecturer Name:</label>
+                            <div class="animation a5 dropDown">
+                                <label class="formLabel" for="lecturerName">Lecturer Name</label>
                                 <select class="form-select" id="lecturerName">
                                     <option value="Participant">Michelle Paelchen</option>
                                     <option value="Business">Stephen Learey</option>
                                     <option value="Visitor">Frank Lynch</option>
                                 </select>
                             </div>
-                            <label for="registerPhone" class="registerLabel">Phone</label>
-                            <input type="tel" id="registerPhone" class="form-field animation a4" name="registerPhone" placeholder="Phone">
-                            <label for="registerEmail" class="registerLabel">Email</label>
-                            <input type="email" id="registerEmail" class="form-field animation a5" name="registerEmail" placeholder="Email Address" required>
-                            <div class="animation a5">
-                                <label for="attendeeType">Attendee Type:</label>
-                                <select class="form-select" id="attendeeType">
-                                    <option value="Participant">Participant</option>
-                                    <option value="Business">Business</option>
-                                    <option value="Visitor">Visitor</option>
+                            <div class="animation a5 dropDown">
+                                <label class="formLabel" for="studentName">Student Name</label>
+                                <select class="form-select" id="studentName">
+                                    <option value="Participant">Bert Smith</option>
+                                    <option value="Business">Jane Doe</option>
+                                    <option value="Visitor">John Deer</option>
                                 </select>
                             </div>
-                            <label for="registerComments" class="registerLabel">Email</label>
+                            <!--<label class="formLabel" for="registerEmail" class="registerLabel">Email</label>
+                            <input type="email" id="registerEmail" class="form-field animation a5" name="registerEmail" placeholder="Email Address" required>
+                            -->
+                            <label for="registerComments" class="formLabel animation a5">Further Comments</label>
                             <textarea id="registerComments" class="form-textarea animation a5" cols="10" rows="8" placeholder="Enter any extra comments or requests here"></textarea>
-                            <button class="button animation a6">REGISTER</button>
+                                
+                            <button class="button animation a5">SUBMIT FEEDBACK</button>
                           </form>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
