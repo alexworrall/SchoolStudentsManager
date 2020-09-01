@@ -74,6 +74,36 @@
             </footer>
         </div>
 
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+        <script>
+            // My firebase config info
+            var firebaseConfig = {
+                apiKey: "AIzaSyDLsexWrCr0zrReHo3HvkYKiQNWXAVWMKg",
+                authDomain: "schoolstudentmanager.firebaseapp.com",
+                databaseURL: "https://schoolstudentmanager.firebaseio.com",
+                projectId: "schoolstudentmanager",
+                storageBucket: "schoolstudentmanager.appspot.com",
+                messagingSenderId: "856737157442",
+                appId: "1:856737157442:web:ecaaa61f18b94ece7db8db",
+                measurementId: "G-GXLFCNHP94"
+            };
+        
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+        <!-- My own javascript file -->
         <script src="../js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
