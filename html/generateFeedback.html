@@ -39,13 +39,16 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-                    <div class="container">
-                          <div class="registerHeader">
+                        <form class="form">
                             <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
-                          </div>
-                          <form class="form">
-                            <label for="registerName" class="registerLabel">Name</label>
-                            <input type="text" id="registerName" class="form-field animation a3" name="registerName" placeholder="Name" required>
+                            <div class="animation a5">
+                                <label for="attendeeType">Lecturer Name:</label>
+                                <select class="form-select" id="lecturerName">
+                                    <option value="Participant">Participant</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Visitor">Visitor</option>
+                                </select>
+                            </div>
                             <label for="registerPhone" class="registerLabel">Phone</label>
                             <input type="tel" id="registerPhone" class="form-field animation a4" name="registerPhone" placeholder="Phone">
                             <label for="registerEmail" class="registerLabel">Email</label>
@@ -62,7 +65,6 @@
                             <textarea id="registerComments" class="form-textarea animation a5" cols="10" rows="8" placeholder="Enter any extra comments or requests here"></textarea>
                             <button class="button animation a6">REGISTER</button>
                           </form>
-                      </div>
             </div> <!-- #main -->
         </div> <!-- #main-container -->
 
