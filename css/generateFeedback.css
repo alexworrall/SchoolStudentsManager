@@ -18,22 +18,6 @@
     display: flex;
     height: 100%;
   }
-  
-  .left {
-    overflow: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    -webkit-animation-name: left;
-            animation-name: left;
-    -webkit-animation-duration: .8s;
-            animation-duration: .8s;
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both;
-    -webkit-animation-delay: .5s;
-            animation-delay: .5s;
-  }
 
   h2 {
     color: #404040;
@@ -44,7 +28,7 @@
   .registerLabel{
     visibility: hidden;
   }
-  
+
   .form {
     width: 80%;
     display: flex;
@@ -207,15 +191,6 @@
   }
 
   @media (min-width: 768px) {
-    #right{
-        display: block;
-    }
-
-    .CDUGif{
-      width: 400px;
-      height: 70px;
-    }
-
     .form{
         width: 80%;
         display: flex;
@@ -223,6 +198,16 @@
         text-align: center;
         margin: 0 auto;
         margin-top:40px;
+        margin-bottom:40px;
+        background-color: #fffffff7;
+        padding: 0px 30px 30px 30px;
+        border: 3px solid #D40000;
+        border-radius: 16px;
+        
+    }
+
+    .form-select{
+      width: 250px;
     }
 
     .registerCDULogo{

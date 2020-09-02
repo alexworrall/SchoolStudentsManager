@@ -43,7 +43,8 @@
                             <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
                             <div class="animation a5 dropDown">
                                 <label class="formLabel" for="lecturerName">Lecturer Name</label>
-                                <select class="form-select" id="lecturerName">
+                                <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
+                                    <option selected disabled hidden>Select Lecturer</option>
                                     <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
                                     <option value="Participant">Michelle Paelchen</option>
                                     <option value="Business">Stephen Learey</option>
@@ -52,10 +53,8 @@
                             </div>
                             <div class="animation a5 dropDown">
                                 <label class="formLabel" for="studentName">Student Name</label>
-                                <select class="form-select" id="studentName">
-                                    <option value="Participant">Bert Smith</option>
-                                    <option value="Business">Jane Doe</option>
-                                    <option value="Visitor">John Deer</option>
+                                <select class="form-select" id="studentName" disabled>
+                                    <option selected disabled hidden>Select Student</option>
                                 </select>
                             </div>
                             <!--<label class="formLabel" for="registerEmail" class="registerLabel">Email</label>
@@ -146,6 +145,6 @@
         </script>
 
         <!-- My own javascript file -->
-        <script src="../js/main.js"></script>
+        <script src="../js/feedback.js"></script>
     </body>
 </html>
