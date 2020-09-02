@@ -26,8 +26,15 @@ fetch(url)
         // Grab the lecturer information from the JSON and show in the dropdown box.
         //var list = data['Episodes'];
         var sel = document.getElementById('lecturerName');
-        console.log(Object.values(data));
         var lecturerArray = [];
+        var studentsArray = [];
+
+        // Create an array of the students details.
+        var keys = Object.keys(data);
+        var studentsArray = keys.map(function(key) {
+            // Add the keys (studentID) to the students Array
+            return key;
+          })
 
         // Loop through the registrations and grab the subjects enrolled.
         Object.keys(data).forEach(function(key) {
@@ -57,4 +64,7 @@ fetch(url)
 
 function lecturerChosen(dropDownValue){
     document.getElementById("studentName").disabled=false;
+
+    // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
+    // check the JSON information for a matching lecturer name in the registrations.
 }
