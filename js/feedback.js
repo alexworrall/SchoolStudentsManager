@@ -31,9 +31,9 @@ fetch(url)
 
         // Create an array of the students details.
         var keys = Object.keys(data);
-        var studentsArray = keys.map(function(key) {
+        var studentsArray = keys.map(function(key1) {
             // Add the keys (studentID) to the students Array
-            return key;
+            return key1;
           })
 
         // Loop through the registrations and grab the subjects enrolled.
@@ -43,7 +43,7 @@ fetch(url)
             Object.keys(value).forEach(function(key) {
                 var subjectValue = value[key];
                 //Only add the lecturer to the list IF it is unique to the array. Stops duplicates in the drop down.
-                if (!lecturerArray.includes(subjectValue['lecturer'])){
+                if (!lecturerArray.includes(subjectValue['lecturer']) && subjectValue['lecturer'] != undefined){
                     // Not duplicate, add to array.
                     lecturerArray.push(subjectValue['lecturer']);
                 }
