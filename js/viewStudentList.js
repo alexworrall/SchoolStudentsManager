@@ -1,5 +1,5 @@
 // Create empty variable for the JSON data to be used later to reduce down the API calls.
-var jsonData;
+var jsonData = [];
 
 // Get the JSON from Firebase using the URL
 var url = 'https://schoolstudentmanager.firebaseio.com/registrations.json';
@@ -49,39 +49,37 @@ fetch(url)
 
 
 function lecturerChosen(dropDownValue){
-    document.getElementById("studentName").disabled=false;
 
     // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
     // check the JSON information for a matching lecturer name in the registrations.
 
     var studentsArray = [];
+    // Loop through the registrations and grab the students enrolled with the lecturer present that was chosen.
+    /*function getSubjectByLecturer(code) {
+        return Object.values(studentsData).filter(
+          function(studentsData) {
+            return studentsData.lecturer == code
+          }
+        );
+    }
+      
+    var found = getSubjectByLecturer(dropDownValue);
+      
+    console.log(found[0].name);*/
+
     // Loop through the registrations and grab the subjects enrolled.
     Object.keys(jsonData).forEach(function(key) {
         var value = jsonData[key];
-        console.log(value);
-        if (!studentsArray.includes(value['studentName']) && value['studentName'] != undefined){
-            // Not duplicate, add to array.
-            studentsArray.push(value['studentName']);
-        }
+        // Loop through the subjects and search for the lecturers
+        Object.keys(value).forEach(function(key) {
+            var subjectValue = value[key];
+            //Only add the lecturer to the list IF it is unique to the array. Stops duplicates in the drop down.
+            if (subjectValue['lecturer'] == dropDownValue){
+                // Not duplicate, add to array.
+                studentsArray.push(subjectValue);
+            }
+        });
     });
 
-    var sel = document.getElementById('studentName');
-    
-    //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
-    var i, L = sel.options.length - 1;
-    for(i = L; i >= 0; i--) {
-        sel.remove(i);
-    }
-
-    // Populate the drop down box
-    // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
-    // not all students but for time saving i will show all students and tweak later.
-    studentsArray.forEach(function(item, array) {
-        // Add those lecturers to the drop down box
-        var opt = document.createElement('option');
-        opt.innerHTML = item;
-        opt.value = item;
-        sel.appendChild(opt);
-        //console.log(item)
-    })
+    console.log(studentsArray);
 }
