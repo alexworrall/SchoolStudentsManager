@@ -53,19 +53,8 @@ function lecturerChosen(dropDownValue){
     // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
     // check the JSON information for a matching lecturer name in the registrations.
 
+    // Create an array to hold the students found and their subjects for the lecturer chosen
     var studentsArray = [];
-    // Loop through the registrations and grab the students enrolled with the lecturer present that was chosen.
-    /*function getSubjectByLecturer(code) {
-        return Object.values(studentsData).filter(
-          function(studentsData) {
-            return studentsData.lecturer == code
-          }
-        );
-    }
-      
-    var found = getSubjectByLecturer(dropDownValue);
-      
-    console.log(found[0].name);*/
 
     // Loop through the registrations and grab the subjects enrolled.
     Object.keys(jsonData).forEach(function(key) {
@@ -73,9 +62,9 @@ function lecturerChosen(dropDownValue){
         // Loop through the subjects and search for the lecturers
         Object.keys(value).forEach(function(key) {
             var subjectValue = value[key];
-            //Only add the lecturer to the list IF it is unique to the array. Stops duplicates in the drop down.
+            //Only add the student and their subjects IF the lecturer shows in their subject list as a lecturer
             if (subjectValue['lecturer'] == dropDownValue){
-                // Not duplicate, add to array.
+                // The lecturer has the student in their class so add them to the array
                 studentsArray.push(subjectValue);
             }
         });
