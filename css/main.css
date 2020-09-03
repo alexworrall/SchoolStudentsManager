@@ -500,9 +500,11 @@ nav a:hover {
         background: url("../img/TAFESABackgroundImageLarge.jpg") no-repeat 0 0;
     }
 
+    /*
     .footer-container{
         bottom: 0;
     }
+    */
 
     .largeMainMenuButton{
         background-color: #D40000;
@@ -576,7 +578,7 @@ nav a:hover {
    =============== */
 
     .wrapper {
-        width: 1026px; /* 1140px - 10% for margins */
+        /*width: 1026px;  1140px - 10% for margins */
         margin: 0 auto;
     }
 }
