@@ -53,6 +53,7 @@ function lecturerChosen(dropDownValue){
     // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
     // check the JSON information for a matching lecturer name in the registrations.
 
+    // Hide the help heading now that the user has selected something from the dropdown.
     var headingHide = document.querySelector('.hideHeading');
     headingHide.style.visibility = 'hidden';
 
@@ -98,15 +99,15 @@ function createRow(data) {
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     data.forEach(function(subject){
-        tableBuild += '<td data-title>'
+        tableBuild += '<td data-title = "ID">'
         + subject.studentID
-        + '</td><td data-title>'
+        + '</td><td data-title = "CRN">'
         + subject.CRN
-        + '</td><td data-title>'
+        + '</td><td data-title = "Name">'
         + subject.studentName
-        + '</td><td data-title>'
+        + '</td><td data-title = "Subject">'
         + subject.shortName
-        + '</td><td data-title>'
+        + '</td><td data-title = "Timing">'
         + subject.term
         + '</td>';
 
