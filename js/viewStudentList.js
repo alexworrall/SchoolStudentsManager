@@ -82,10 +82,8 @@ function lecturerChosen(dropDownValue){
         tb.removeChild(tb.childNodes[0]);
     }
 
-    var studentsTable = createRow(studentsArray);
-    var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
-    var newRow = tableRef.insertRow(-1);
-    newRow.innerHTML = studentsTable;
+    createRow(studentsArray);
+
 }
 
 // Function to build the table with information from the JSON information gathered before.
@@ -93,20 +91,23 @@ function lecturerChosen(dropDownValue){
 function createRow(data) {
     // Create a variable which holds the HTML table which will be built for the students programatically
     var tableBuild = "";
+    var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     data.forEach(function(subject){
-        tableBuild += '<tr><td>'
+        tableBuild += '<td data-title>'
         + subject.studentID
-        + '</td data-title><td>'
+        + '</td><td data-title>'
         + subject.CRN
-        + '</td data-title><td>'
+        + '</td><td data-title>'
         + subject.studentName
-        + '</td data-title><td>'
+        + '</td><td data-title>'
         + subject.shortName
-        + '</td data-title><td>'
+        + '</td><td data-title>'
         + subject.term
-        + '</td data-title></tr>';
-    });
+        + '</td>';
 
-    return tableBuild;
+        var newRow = tableRef.insertRow(-1);
+        newRow.innerHTML = tableBuild;
+        tableBuild = "";
+    });
 }
