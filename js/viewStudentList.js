@@ -53,6 +53,10 @@ function lecturerChosen(dropDownValue){
     // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
     // check the JSON information for a matching lecturer name in the registrations.
 
+    var headingHide = document.querySelector('.hideHeading');
+    headingHide.style.visibility = 'hidden';
+
+
     // Create an array to hold the students found and their subjects for the lecturer chosen
     var studentsArray = [];
 
