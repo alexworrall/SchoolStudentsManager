@@ -55,7 +55,7 @@ function lecturerChosen(dropDownValue){
 
     // Hide the help heading now that the user has selected something from the dropdown.
     var headingHide = document.querySelector('.hideHeading');
-    headingHide.style.visibility = 'hidden';
+    headingHide.style.visibility = 'none';
 
 
     // Create an array to hold the students found and their subjects for the lecturer chosen

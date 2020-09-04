@@ -62,7 +62,7 @@ function studentChosen(dropDownValue){
 
     // Hide the help heading now that the user has selected something from the dropdown.
     var headingHide = document.querySelector('.hideHeading');
-    headingHide.style.visibility = 'hidden';
+    headingHide.style.visibility = 'none';
 
     // Get the JSON from Firebase using the URL
     var url = 'https://schoolstudentmanager.firebaseio.com/school.json';
