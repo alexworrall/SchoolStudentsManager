@@ -45,8 +45,8 @@
                         <form class="form">
                             <h2 class="registerHeading">View the school student coordinators</h2>
                             <div class="animation a5 dropDown">
-                                <label class="formLabel" for="lecturerName">Student Name</label>
-                                <select class="form-select" id="lecturerName" onchange="studentChosen(this.value);">
+                                <label class="formLabel" for="studentName">Student Name</label>
+                                <select class="form-select" id="studentName" onchange="studentChosen(this.value);">
                                     <option selected disabled hidden>Select Student</option>
                                     <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
                                     <option value="Participant">Michelle Paelchen</option>
@@ -67,10 +67,10 @@
                                 <table id="table" class="table table-hover table-mc-light-blue">
                                     <thead>
                                       <tr>
-                                        <th>ID</th>
-                                        <th>CRN</th>
                                         <th>Name</th>
-                                        <th>Subject</th>
+                                        <th>School</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
                                         <th>Timing</th>
                                       </tr>
                                     </thead>
@@ -81,6 +81,13 @@
                                 </div>
                                 <h2 class="hideHeading">Select a student from the drop down above to see their Coordinators details</h2>
                             </div>
+
+                            <iframe
+                              width="450"
+                              height="250"
+                              frameborder="0" style="border:0"
+                              src="https://www.google.com/maps/embed/v1/search?key=AIzaSyDfRzNxbgmiRHKbCCDJ8jnumLeAK53s3ms&q=record+stores+in+Seattle" allowfullscreen>
+                            </iframe>
                             
                             <button class="button animation a5" onclick="location.href='../index.html'"  type="button">HOME</button>
                           </form>
