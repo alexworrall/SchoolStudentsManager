@@ -64,11 +64,49 @@ function lecturerChosen(dropDownValue){
             var subjectValue = value[key];
             //Only add the student and their subjects IF the lecturer shows in their subject list as a lecturer
             if (subjectValue['lecturer'] == dropDownValue){
+                // Add the students ID to the JSON object
+                subjectValue.studentID = value.studentID;
+                // Add the students Name to the JSON object
+                subjectValue.studentName = value.studentName;
                 // The lecturer has the student in their class so add them to the array
                 studentsArray.push(subjectValue);
             }
         });
     });
 
-    console.log(studentsArray);
+    
+    var tb = document.querySelector('#table tbody');
+
+    // while tb has children, remove the first one
+    while (tb.childNodes.length) {
+        tb.removeChild(tb.childNodes[0]);
+    }
+
+    var studentsTable = createRow(studentsArray);
+    var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+    var newRow = tableRef.insertRow(-1);
+    newRow.innerHTML = studentsTable;
+}
+
+// Function to build the table with information from the JSON information gathered before.
+// Code sourced from the HIT238 resources from Matt Elvey and customised.
+function createRow(data) {
+    // Create a variable which holds the HTML table which will be built for the students programatically
+    var tableBuild = "";
+
+    data.forEach(function(subject){
+        tableBuild += '<tr><td>'
+        + subject.studentID
+        + '</td data-title><td>'
+        + subject.CRN
+        + '</td data-title><td>'
+        + subject.studentName
+        + '</td data-title><td>'
+        + subject.shortName
+        + '</td data-title><td>'
+        + subject.term
+        + '</td data-title></tr>';
+    });
+
+    return tableBuild;
 }
