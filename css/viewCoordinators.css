@@ -1,0 +1,246 @@
+.headerLogo{
+    box-sizing: border-box;
+    vertical-align: bottom;
+    margin-left: 0px;
+    visibility: visible;
+    float: left;
+    margin: 10px 10px 0px 0px;
+    width: 50px;
+    height: 50px;
+}
+
+/* Form styling used from: https://codepen.io/chrisoncode/pen/IdGKH */
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+  
+  .container {
+    display: flex;
+    height: 100%;
+  }
+
+  h2 {
+    color: #404040;
+    text-align: center;
+    width: 100%;
+  }
+
+  .registerLabel{
+    visibility: hidden;
+  }
+
+  .form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+  
+  .form > p {
+    text-align: right;
+  }
+  
+  .form > p > a {
+    color: #000;
+    font-size: 14px;
+  }
+
+  .CDUGif{
+    width: 300px;
+    height: 45px;
+  }
+
+  .registerCDULogo{
+    margin: 0 auto 10px;
+    width: 300px;
+  }
+
+  .form-field {
+    height: 46px;
+    padding: 0 16px;
+    border: none;
+    border-bottom: 2px solid #d2e2ff;
+    background: linear-gradient(180deg, white, #f8faff);
+    border-radius: 4px;
+    font-family: sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-top: 20px;
+  }
+
+  .form-textarea {
+    padding: 0 16px;
+    border: 2px solid #d2e2ff;
+    background: linear-gradient(180deg, white, #f8faff);
+    border-radius: 4px;
+    font-family: sans-serif;
+    outline: 0;
+    transition: .2s;
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+
+  .formLabel{
+      margin-top:10px;
+  }
+
+  .dropDown{
+      margin-top: 10px;
+  }
+
+  .form-select {
+	display: inline-block;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 700;
+	color: #444;
+	line-height: 1.3;
+	padding: .6em 1.4em .5em .8em;
+	width: 80%;
+	max-width: 100%;
+	box-sizing: border-box;
+    margin-top: 2px;
+	border: 1px solid #aaa;
+	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+	border-radius: .5em;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+	  linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+	background-repeat: no-repeat, repeat;
+	background-position: right .7em top 50%, 0 0;
+	background-size: .65em auto, 100%;
+}
+.form-select::-ms-expand {
+	display: none;
+}
+.form-select:hover {
+	border-color: #888;
+}
+.form-select:focus {
+	border-color: #aaa;
+	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+	box-shadow: 0 0 0 3px -moz-mac-focusring;
+	color: #222;
+	outline: none;
+}
+.form-select option {
+	font-weight:normal;
+}
+  
+  .form-field:focus, .form-textarea:focus{
+    border-color: #0f7ef1;
+  }
+  
+  .form > .button {
+    padding: 12px 10px;
+    border: 0;
+    background: #D40000;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+  }
+  
+  .animation {
+  -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+  .a5 {
+    -webkit-animation-delay: .5s;
+            animation-delay: .5s;
+  }
+
+  
+  @-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 30%, 0);
+      transform: translate3d(0, 30%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 30%, 0);
+      transform: translate3d(0, 30%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0 auto;
+        margin-top:40px;
+        margin-bottom:40px;
+        background-color: #fffffff7;
+        padding: 0px 30px 30px 30px;
+        border: 3px solid #D40000;
+        border-radius: 16px;
+        
+    }
+
+    .form-select{
+      width: 250px;
+    }
+
+    .registerCDULogo{
+      margin: 0 auto 10px;
+      width: 300px;
+      display:block;
+    }
+
+    @-webkit-keyframes fadeInUp {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 30%, 0);
+          transform: translate3d(0, 30%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 30%, 0);
+          transform: translate3d(0, 30%, 0);
+        }
+      
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+      }
+  }
