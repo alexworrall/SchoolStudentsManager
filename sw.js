@@ -3,8 +3,17 @@ var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION;
 var urlsToCache = [
   '/',
-  '/styles/main.css',
-  '/script/main.js'
+  '/css/main.css',
+  '/css/generateFeedback.css',
+  '/css/normalize.css',
+  '/css/tableStyle.css',
+  '/css/viewCoordinators.css',
+  '/css/viewStudentList.css',
+  '/script/main.js',
+  '/script/feedback.js',
+  '/script/firebase.js',
+  '/script/viewCoordinators.js',
+  '/script/viewStudentList.js'
 ];
 
 self.addEventListener('install', function(event) {
