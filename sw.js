@@ -2,7 +2,7 @@ var CACHE_TITLE = 'my-site-cache';
 var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION;
 var urlsToCache = [
-  '/SchoolStudentManager',
+  '/SchoolStudentManager/',
   '/SchoolStudentsManager/css/main.css',
   '/SchoolStudentsManager/css/generateFeedback.css',
   '/SchoolStudentsManager/css/normalize.css',
