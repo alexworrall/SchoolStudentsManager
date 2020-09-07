@@ -57,6 +57,9 @@ textarea {
    ========================================================================== */
 
 body {
+    float:left;
+    overflow-y: auto;
+    height: 100px;
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
     margin: 0;
     /*min-width: 482px;*/
@@ -174,8 +177,6 @@ body {
     position: absolute;
     width: 100%;
     min-width: 482px;
-    position: fixed; 
-    bottom: 0;
     left: 0;
     right: 0;
     height: 100px;
@@ -273,8 +274,100 @@ nav a:hover {
     visibility: visible;
 }
 
+.smallMainMenuButton1{
+    height: 75px;
+    width: 380px;
+    margin-top: 20px;
+    margin-left:100%;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding: 12px 30px;
+    background: #D40000;
+    border-radius: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: right;
+}
+
+.smallMainMenuButton2{
+    height: 75px;
+    width: 350px;
+    margin-top: 40px;
+    margin-left:100%;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
+    animation-delay: .5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding: 12px 30px;
+    background: #D40000;
+    border-radius: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: right;
+}
+
+.smallMainMenuButton3{
+    height: 75px;
+    width: 320px;
+    margin-top: 40px;
+    margin-left:100%;
+    -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntrance 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance 1s;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding: 12px 30px;
+    background: #D40000;
+    border-radius: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: right;
+}
+
+.smallMainMenuButton4{
+    height: 75px;
+    width: 340px;
+    margin-top: 40px;
+    margin-left:100%;
+    -webkit-animation: mainMenuEntrance2 1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: mainMenuEntranc2 1s; /* Firefox < 16 */
+    -ms-animation: mainMenuEntrance2 1s; /* Internet Explorer */
+    -o-animation: mainMenuEntrance2 1s; /* Opera < 12.1 */
+    animation: mainMenuEntrance2 1s;
+    animation-delay: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    padding: 12px 30px;
+    background: #D40000;
+    border-radius: 50px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+    text-align: right;
+}
+
 .generateFeedbackButton{
     height: 75px;
+    width: 400px;
     margin-top: 20px;
     margin-left:100%;
     -webkit-animation: mainMenuEntrance 1s; /* Safari, Chrome and Opera > 12.1 */
