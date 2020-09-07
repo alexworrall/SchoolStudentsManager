@@ -4,23 +4,30 @@
     "icons": [
         {
             "src": "/SchoolStudentsManager/img/icons/icon-128.png",
-            "sizes": "128x128",
-            "type": "image/png"
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "/SchoolStudentsManager/img/icons/icon-192.png",
+            "type": "image/png",
+            "sizes": "192x192"
         },
         {
             "src": "/SchoolStudentsManager/img/icons/icon-256.png",
-            "sizes": "256x256",
             "type": "image/png",
+            "sizes": "256x256",
             "purpose": "any maskable"
         },
         {
             "src": "/SchoolStudentsManager/img/icons/icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "sizes": "512x512"
         }
         
     ],
+    "scope":"/",
     "start_url": "index.html",
+    "orientation": "portrait",
     "display": "standalone",
     "background_color": "#D40000",
     "theme_color": "#D40000"
