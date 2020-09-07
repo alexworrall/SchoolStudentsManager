@@ -59,7 +59,7 @@ textarea {
 body {
     font: 16px/26px Helvetica, Helvetica Neue, Arial;
     margin: 0;
-    min-width: 482px;
+    /*min-width: 482px;*/
     width: auto !important;  /* Firefox will set width as auto */
 }
 
