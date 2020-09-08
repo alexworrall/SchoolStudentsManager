@@ -91,9 +91,40 @@ var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
 // Use the event listener to submit the feedback through firebase.
 submitFeedbackBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
+
+    // Check that the lecturer has been selected from the dropdown
+    var lecturerDropdown = document.getElementById('lecturerName');
+    var lecturerDropdownDiv = document.getElementById('lecturerDropdownDiv');
+    if(lecturerDropdown.selectedIndex == 0){  //Test if something was checked
+        lecturerDropdownDiv.style.backgroundColor = '#ff9999';
+    }else{
+        lecturerDropdownDiv.style.backgroundColor = '#6fe99a';
+    } 
+
+    // Check that the student has been selected from the dropdown
+    var studentDropdown = document.getElementById('studentName');
+    var studentDropdownDiv = document.getElementById('studentDropdownDiv');
+    if(studentDropdown.selectedIndex == 0){  //Test if something was checked
+        studentDropdownDiv.style.backgroundColor = '#ff9999';
+    }else{
+        studentDropdownDiv.style.backgroundColor = '#6fe99a';
+    } 
+
+    // Check that attendance has been selected
     var checked_attendance = document.querySelector('input[name="radioAttendance"]:checked');
     var attendanceContainer = document.getElementById('attendanceContainer');
     if(checked_attendance == null){  //Test if something was checked
         attendanceContainer.style.backgroundColor = '#ff9999';
+    }else{
+        attendanceContainer.style.backgroundColor = '#6fe99a';
+    } 
+
+    // Check that attitude has been selected
+    var checked_attitude = document.querySelector('input[name="radioAttitude"]:checked');
+    var attitudeContainer = document.getElementById('attitudeContainer');
+    if(checked_attitude == null){  //Test if something was checked
+        attitudeContainer.style.backgroundColor = '#ff9999';
+    }else{
+        attitudeContainer.style.backgroundColor = '#6fe99a';
     } 
 });

@@ -44,7 +44,7 @@
                 <div class="main wrapper clearfix">
                             <form class="form">
                                 <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
-                                <div class="animation a5 dropDown">
+                                <div id="lecturerDropdownDiv" class="animation a5 dropDown">
                                     <label class="formLabel" for="lecturerName">Lecturer Name</label>
                                     <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
                                         <option selected disabled hidden>Select Lecturer</option>
@@ -54,7 +54,7 @@
                                         <option value="Visitor">Frank Lynch</option>-->
                                     </select>
                                 </div>
-                                <div class="animation a5 dropDown">
+                                <div id="studentDropdownDiv" class="animation a5 dropDown">
                                     <label class="formLabel" for="studentName">Student Name</label>
                                     <select class="form-select" id="studentName" disabled>
                                         <option selected disabled hidden>Select Student</option>
@@ -81,11 +81,11 @@
                                 <h3>Attitude</h3>
                                 <div id="attitudeContainer" name="attitudeContainer" class="attitudeContainer">
                                     <!-- Radio buttons for Attendance -->
-                                    <input type="radio" id="attitudePoor" name="radioattitude" value="poor">
+                                    <input type="radio" id="attitudePoor" name="radioAttitude" value="poor">
                                     <label for="attitudePoor" class="radioLabel">Poor</label>
-                                    <input type="radio" id="attitudeFair" name="radioattitude" value="fair">
+                                    <input type="radio" id="attitudeFair" name="radioAttitude" value="fair">
                                     <label for="attitudeFair" class="radioLabel">Fair</label>
-                                    <input type="radio" id="attitudeExcellent" name="radioattitude" value="excellent">
+                                    <input type="radio" id="attitudeExcellent" name="radioAttitude" value="excellent">
                                     <label for="attitudeExcellent" class="radioLabel">Excellent</label>
                                 </div>
 

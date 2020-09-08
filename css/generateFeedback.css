@@ -19,6 +19,10 @@
     height: 100%;
   }
 
+  .attendanceContainer{
+    border-radius: 10px;
+  }
+
   h2 {
     color: #404040;
     text-align: center;
@@ -89,7 +93,7 @@
       margin-top: 10px;
   }
 
-  .form-select {
+.form-select {
 	display: inline-block;
 	font-size: 16px;
 	font-family: sans-serif;
@@ -100,7 +104,8 @@
 	width: 80%;
 	max-width: 100%;
 	box-sizing: border-box;
-    margin-top: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 	border: 1px solid #aaa;
 	box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
 	border-radius: .5em;
