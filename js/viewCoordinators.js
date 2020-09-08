@@ -92,7 +92,17 @@ function studentChosen(dropDownValue){
         createRow(schoolDetails);
 
         // Make the map visible and add in the address for the school
+        "use strict";
+                            
+        let map;
 
+        map = new google.maps.Map(document.getElementById("coordMap"), {
+            center: {
+            lat: parseFloat(schoolDetails.lat),
+            lng: parseFloat(schoolDetails.lng)
+            },
+            zoom: 11
+        });
     });
 }
 
