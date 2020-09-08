@@ -113,8 +113,18 @@ function studentChosen(dropDownValue){
   
               infoWindow.setPosition(pos);
               infoWindow.setContent('You are here');
+
               infoWindow.open(map);
-              map.setCenter(pos);
+              //map.setCenter(pos);
+              
+              /*
+              map.fitBounds(new google.maps.LatLngBounds(
+                //bottom left
+                new google.maps.LatLng(lat_min, lng_min),
+                //top right
+                new google.maps.LatLng(lat_max, lng_max)
+              ));*/
+
             }, function() {
               handleLocationError(true, infoWindow, map.getCenter());
             });
