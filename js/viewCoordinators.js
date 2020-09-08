@@ -91,6 +91,8 @@ function studentChosen(dropDownValue){
         // Pass the object through to the function to add it to the HTML table
         createRow(schoolDetails);
 
+        // Make the map visible and add in the address for the school
+
     });
 }
 

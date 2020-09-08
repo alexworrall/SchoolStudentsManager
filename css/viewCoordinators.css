@@ -14,10 +14,16 @@
 
 /* basic stylings ------------------------------------------ */
   
-  .map{
-    margin: 0 auto;
-  }
+#map {
+  height: 300px;
+}
 
+  .mapContainer{
+    margin: 0 auto;
+    height: 200px !important;
+    width: 300px !important;
+  }
+  
   .container {
     display: flex;
     height: 100%;
