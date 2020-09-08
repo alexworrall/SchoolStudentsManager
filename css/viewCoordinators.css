@@ -19,8 +19,9 @@
 }
 
   .mapContainer{
+    visibility: hidden;
     margin: 0 auto;
-    height: 350px;
+    height: 0px;
     width: 100%;
   }
   

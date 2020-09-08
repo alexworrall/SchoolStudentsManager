@@ -100,7 +100,10 @@ function studentChosen(dropDownValue){
             document.getElementById('coordMap'), {zoom: 13, center: school});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: school, map: map});
-
+        
+        var mapOuter = document.querySelector('.mapContainer');
+        mapOuter.style.visibility = "visible";
+        mapOuter.style.height = "350px";
     });
 }
 
