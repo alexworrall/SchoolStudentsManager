@@ -18,79 +18,111 @@
         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <div class="page-container">
+            <!--[if lt IE 8]>
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
 
-        <div class="header-container">
-            <header class="wrapper clearfix">
-                <img class="headerLogo" src="../img/TAFESA_Logo.png" alt="TAFE SA Header Logo Small">
-                <h1 class="title">Submit Feedback</h1>
-                <nav>
-                    <input class="menu-btn" type="checkbox" id="menu-btn" />
-                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-                    <ul class="menu">
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="viewStudentList.html">Student List</a></li>
-                        <li><a href="feedbackHistory.html">History</a></li>
-                        <li><a href="viewCoordinators.html">Coordinators</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
+            <div class="header-container">
+                <header class="wrapper clearfix">
+                    <img class="headerLogo" src="../img/TAFESA_Logo.png" alt="TAFE SA Header Logo Small">
+                    <h1 class="title">Submit Feedback</h1>
+                    <nav>
+                        <input class="menu-btn" type="checkbox" id="menu-btn" />
+                        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                        <ul class="menu">
+                            <li><a href="../index.html">Home</a></li>
+                            <li><a href="viewStudentList.html">Student List</a></li>
+                            <li><a href="feedbackHistory.html">History</a></li>
+                            <li><a href="viewCoordinators.html">Coordinators</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
 
-        <div class="main-container">
-            <div class="main wrapper clearfix">
-                        <form class="form">
-                            <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
-                            <div class="animation a5 dropDown">
-                                <label class="formLabel" for="lecturerName">Lecturer Name</label>
-                                <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
-                                    <option selected disabled hidden>Select Lecturer</option>
-                                    <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
-                                    <option value="Participant">Michelle Paelchen</option>
-                                    <option value="Business">Stephen Learey</option>
-                                    <option value="Visitor">Frank Lynch</option>-->
-                                </select>
-                            </div>
-                            <div class="animation a5 dropDown">
-                                <label class="formLabel" for="studentName">Student Name</label>
-                                <select class="form-select" id="studentName" disabled>
-                                    <option selected disabled hidden>Select Student</option>
-                                </select>
-                            </div>
-                            <!--<label class="formLabel" for="registerEmail" class="registerLabel">Email</label>
-                            <input type="email" id="registerEmail" class="form-field animation a5" name="registerEmail" placeholder="Email Address" required>
-                            -->
-                            <label for="registerComments" class="formLabel animation a5">Further Comments</label>
-                            <textarea id="registerComments" class="form-textarea animation a5" cols="10" rows="8" placeholder="Enter any extra comments or requests here"></textarea>
+            <div class="main-container">
+                <div class="main wrapper clearfix">
+                            <form class="form">
+                                <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
+                                <div class="animation a5 dropDown">
+                                    <label class="formLabel" for="lecturerName">Lecturer Name</label>
+                                    <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
+                                        <option selected disabled hidden>Select Lecturer</option>
+                                        <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
+                                        <option value="Participant">Michelle Paelchen</option>
+                                        <option value="Business">Stephen Learey</option>
+                                        <option value="Visitor">Frank Lynch</option>-->
+                                    </select>
+                                </div>
+                                <div class="animation a5 dropDown">
+                                    <label class="formLabel" for="studentName">Student Name</label>
+                                    <select class="form-select" id="studentName" disabled>
+                                        <option selected disabled hidden>Select Student</option>
+                                    </select>
+                                </div>
+                                <!--<label class="formLabel" for="registerEmail" class="registerLabel">Email</label>
+                                <input type="email" id="registerEmail" class="form-field animation a5" name="registerEmail" placeholder="Email Address" required>
+                                -->
                                 
-                            <button class="button animation a5">SUBMIT FEEDBACK</button>
-                          </form>
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+                                <h3>Attendance</h3>
+                                <div id="attendanceContainer" name="attendanceContainer" class="attendanceContainer">
+                                    <!-- Radio buttons for Attendance -->
+                                    <input type="radio" id="attPoor" name="radioAttendance" value="poor">
+                                    <label for="attPoor" class="radioLabel">Poor</label>
+                                    <input type="radio" id="attFair" name="radioAttendance" value="fair">
+                                    <label for="attFair" class="radioLabel">Fair</label>
+                                    <input type="radio" id="attExcellent" name="radioAttendance" value="excellent">
+                                    <label for="attExcellent" class="radioLabel">Excellent</label>
+                                </div>
 
-        <div class="footer-container">
-            <footer class="wrapper">
-                <h3>© Copyright Alexander Worrall</h3>
-            </footer>
+                                <label for="attendanceComments" class="formLabel animation a5">Attendance Comments</label>
+                                <textarea id="attendanceComments" class="form-textarea animation a5" cols="10" rows="5" placeholder="Enter any attendance comments here"></textarea>
+
+                                <h3>Attitude</h3>
+                                <div id="attitudeContainer" name="attitudeContainer" class="attitudeContainer">
+                                    <!-- Radio buttons for Attendance -->
+                                    <input type="radio" id="attitudePoor" name="radioattitude" value="poor">
+                                    <label for="attitudePoor" class="radioLabel">Poor</label>
+                                    <input type="radio" id="attitudeFair" name="radioattitude" value="fair">
+                                    <label for="attitudeFair" class="radioLabel">Fair</label>
+                                    <input type="radio" id="attitudeExcellent" name="radioattitude" value="excellent">
+                                    <label for="attitudeExcellent" class="radioLabel">Excellent</label>
+                                </div>
+
+                                <label for="attitudeComments" class="formLabel animation a5">Attitude Comments</label>
+                                <textarea id="attitudeComments" class="form-textarea animation a5" cols="10" rows="5" placeholder="Enter any attitude comments here"></textarea>
+
+                                <h3>Extra Comments</h3>
+                                <label for="registerComments" class="formLabel animation a5">Further Comments</label>
+                                <textarea id="registerComments" class="form-textarea animation a5" cols="10" rows="5" placeholder="Enter any extra comments or requests here"></textarea>
+
+                                <button id="submitFeedbackBtn" class="button animation a5">SUBMIT FEEDBACK</button>
+                            </form>
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
+
+            <div class="footer-container">
+                <footer class="wrapper">
+                    <h3>© Copyright Alexander Worrall</h3>
+                </footer>
+            </div>
+
+            <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+            <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+            <!--<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>-->
+
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+            
+            <script src="../js/firebase.js"></script>
+            <!-- My own javascript file -->
+            <script src="../js/feedback.js"></script>
         </div>
-
-        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
-
-        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-        <!--<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>-->
-
-        <!-- Add Firebase products that you want to use -->
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
-
-        
-        <script src="../js/firebase.js"></script>
-        <!-- My own javascript file -->
-        <script src="../js/feedback.js"></script>
     </body>
 </html>

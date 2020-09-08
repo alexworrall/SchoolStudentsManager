@@ -85,3 +85,15 @@ function lecturerChosen(dropDownValue){
         //console.log(item)
     })
 }
+
+var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+  
+// Use the event listener to submit the feedback through firebase.
+submitFeedbackBtn.addEventListener('click', function(evt) {
+    evt.preventDefault();
+    var checked_attendance = document.querySelector('input[name="radioAttendance"]:checked');
+    var attendanceContainer = document.getElementById('attendanceContainer');
+    if(checked_attendance == null){  //Test if something was checked
+        attendanceContainer.style.backgroundColor = '#ff9999';
+    } 
+});
