@@ -27,6 +27,14 @@
     border-radius: 10px;
   }
 
+  #lecturerDropdownDiv{
+    border-radius: 10px;
+  }
+
+  #studentDropdownDiv{
+    border-radius: 10px;
+  }
+
   h2 {
     color: #404040;
     text-align: center;
