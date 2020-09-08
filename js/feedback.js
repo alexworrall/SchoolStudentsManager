@@ -76,22 +76,29 @@ function lecturerChosen(dropDownValue){
     // Populate the drop down box
     // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
     // not all students but for time saving i will show all students and tweak later.
+    var opt = document.createElement('option');
+    opt.innerHTML = "Select Student";
+    opt.value = "";
+    sel.appendChild(opt);
     studentsArray.forEach(function(item, array) {
-        // Add those lecturers to the drop down box
-        var opt = document.createElement('option');
+        // Add those students to the drop down box
+        opt = document.createElement('option');
         opt.innerHTML = item;
         opt.value = item;
         sel.appendChild(opt);
         //console.log(item)
     })
+
+    // Validate the lecturer dropdown now that it has been changed to something.
+    validateLecturerDropdown();
 }
 
-var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
-  
-// Use the event listener to submit the feedback through firebase.
-submitFeedbackBtn.addEventListener('click', function(evt) {
-    evt.preventDefault();
+function studentChosen(dropDownValue){
+    // Validate the student drop down now it has been changed
+    validateStudentDropdown();
+}
 
+function validateLecturerDropdown(){
     // Check that the lecturer has been selected from the dropdown
     var lecturerDropdown = document.getElementById('lecturerName');
     var lecturerDropdownDiv = document.getElementById('lecturerDropdownDiv');
@@ -100,7 +107,9 @@ submitFeedbackBtn.addEventListener('click', function(evt) {
     }else{
         lecturerDropdownDiv.style.backgroundColor = '#6fe99a';
     } 
+}
 
+function validateStudentDropdown(){
     // Check that the student has been selected from the dropdown
     var studentDropdown = document.getElementById('studentName');
     var studentDropdownDiv = document.getElementById('studentDropdownDiv');
@@ -109,7 +118,9 @@ submitFeedbackBtn.addEventListener('click', function(evt) {
     }else{
         studentDropdownDiv.style.backgroundColor = '#6fe99a';
     } 
+}
 
+function validateAttendanceRadio(){
     // Check that attendance has been selected
     var checked_attendance = document.querySelector('input[name="radioAttendance"]:checked');
     var attendanceContainer = document.getElementById('attendanceContainer');
@@ -118,7 +129,9 @@ submitFeedbackBtn.addEventListener('click', function(evt) {
     }else{
         attendanceContainer.style.backgroundColor = '#6fe99a';
     } 
+}
 
+function validateAttitudeRadio(){
     // Check that attitude has been selected
     var checked_attitude = document.querySelector('input[name="radioAttitude"]:checked');
     var attitudeContainer = document.getElementById('attitudeContainer');
@@ -127,4 +140,40 @@ submitFeedbackBtn.addEventListener('click', function(evt) {
     }else{
         attitudeContainer.style.backgroundColor = '#6fe99a';
     } 
+}
+
+var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
+  
+// Use the event listener to the submit button to send the feedback through firebase.
+submitFeedbackBtn.addEventListener('click', function(evt) {
+    evt.preventDefault();
+
+    // Check lecturer Dropdown
+    validateLecturerDropdown();
+    // Check student Dropdown
+    validateStudentDropdown();
+    // Check attendance radio buttons
+    validateAttendanceRadio();
+    // Check attitude radio buttons
+    validateAttitudeRadio();
 });
+
+// Event listener for the attendance radio buttons
+if (document.querySelector('input[name="radioAttendance"]')) {
+    document.querySelectorAll('input[name="radioAttendance"]').forEach((elem) => {
+      elem.addEventListener("change", function(event) {
+        // Validate the attendance radio buttons
+        validateAttendanceRadio();
+      });
+    });
+  }
+
+// Event listener for the attitude radio buttons
+if (document.querySelector('input[name="radioAttitude"]')) {
+    document.querySelectorAll('input[name="radioAttitude"]').forEach((elem) => {
+        elem.addEventListener("change", function(event) {
+        // validate the attitude radio buttons
+        validateAttitudeRadio();
+        });
+    });
+}
