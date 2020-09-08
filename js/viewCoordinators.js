@@ -115,7 +115,7 @@ function studentChosen(dropDownValue){
               infoWindow.setContent('You are here');
 
               infoWindow.open(map);
-              //map.setCenter(pos);
+              map.setCenter(school);
               
               /*
               map.fitBounds(new google.maps.LatLngBounds(
