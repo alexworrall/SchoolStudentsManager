@@ -6,6 +6,11 @@ html {
     line-height: 1.4;
 }
 
+.page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -170,16 +175,17 @@ body {
     top: 0;
   }
 
+.main-container{
+    padding-bottom: 7rem;    /* Footer height */
+    position: relative;
+}
+
 .footer-container{
     border-top: 5px solid #0a0a0a;
-    margin-top: 20px;
-    position: absolute;
     width: 100%;
-    min-width: 400px;
-    left: 0;
-    right: 0;
-    height: 100px;
+    position: absolute;
     bottom: 0;
+    height: 6.5rem;             /*Footer height */
 }
 
 .header-container,
