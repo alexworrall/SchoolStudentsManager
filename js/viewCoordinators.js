@@ -93,16 +93,14 @@ function studentChosen(dropDownValue){
 
         // Make the map visible and add in the address for the school
         "use strict";
-                            
-        let map;
 
-        map = new google.maps.Map(document.getElementById("coordMap"), {
-            center: {
-            lat: parseFloat(schoolDetails.lat),
-            lng: parseFloat(schoolDetails.lng)
-            },
-            zoom: 11
-        });
+        var school = {lat: parseFloat(schoolDetails.lat), lng: parseFloat(schoolDetails.lng)};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('coordMap'), {zoom: 13, center: school});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: school, map: map});
+
     });
 }
 
