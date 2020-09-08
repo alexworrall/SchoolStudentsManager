@@ -97,14 +97,44 @@ function studentChosen(dropDownValue){
         var school = {lat: parseFloat(schoolDetails.lat), lng: parseFloat(schoolDetails.lng)};
         // The map, centered at Uluru
         var map = new google.maps.Map(
-            document.getElementById('coordMap'), {zoom: 13, center: school});
+            document.getElementById('coordMap'), {zoom: 12, center: school});
         // The marker, positioned at Uluru
         var marker = new google.maps.Marker({position: school, map: map});
+
+        var infoWindow = new google.maps.InfoWindow;
+        
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+              var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+  
+              infoWindow.setPosition(pos);
+              infoWindow.setContent('You are here');
+              infoWindow.open(map);
+              map.setCenter(pos);
+            }, function() {
+              handleLocationError(true, infoWindow, map.getCenter());
+            });
+          } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
         
         var mapOuter = document.querySelector('.mapContainer');
         mapOuter.style.visibility = "visible";
         mapOuter.style.height = "350px";
     });
+
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                                'Error: The Geolocation service failed.' :
+                                'Error: Your browser doesn\'t support geolocation.');
+            infoWindow.open(map);
+        }
 }
 
 // Function to build the table with information from the JSON information gathered before.
