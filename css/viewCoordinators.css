@@ -14,14 +14,14 @@
 
 /* basic stylings ------------------------------------------ */
   
-#map {
-  height: 300px;
+#coordMap {
+  height: 100%;
 }
 
   .mapContainer{
     margin: 0 auto;
-    height: 200px !important;
-    width: 300px !important;
+    height: 350px;
+    width: 100%;
   }
   
   .container {
