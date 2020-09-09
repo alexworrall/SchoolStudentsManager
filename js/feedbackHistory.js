@@ -36,25 +36,25 @@ function createRow(data) {
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     data.forEach(function(subject){
-        tableBuild += '<td data-title = "ID"><br>'
+        tableBuild += '<h4>Feedback for student: ' + subject.studentName + '</h4><td data-title = "ID"><br>'
         + subject.studentID
-        + '<hr></td><td data-title = "Name"><br>'
+        + '</td><td data-title = "Name"><br>'
         + subject.studentName
-        + '<hr></td><td data-title = "Date"><br>'
+        + '</td><td data-title = "Date"><br>'
         + subject.dateTime
-        + '<hr></td><td data-title = "Subject"><br>'
+        + '</td><td data-title = "Subject"><br>'
         + subject.subjectName
-        + '<hr></td><td data-title = "Attendance"><br>'
+        + '</td><td data-title = "Attendance"><br>'
         + subject.attendanceRating
-        + '<hr></td><td data-title = "Attendance Comment"><br>'
+        + '</td><td data-title = "Attendance Comment"><br>'
         + subject.attendanceComment
-        + '<hr></td><td data-title = "Attitude"><br>'
+        + '</td><td data-title = "Attitude"><br>'
         + subject.attitudeRating
-        + '<hr></td><td data-title = "Attitude Comment"><br>'
+        + '</td><td data-title = "Attitude Comment"><br>'
         + subject.attitudeComment
-        + '<hr></td><td data-title = "Additional Comment"><br>'
+        + '</td><td data-title = "Additional Comment"><br>'
         + subject.additionalComments
-        + '<hr></td>';
+        + '</td>';
 
         var newRow = tableRef.insertRow(-1);
         newRow.innerHTML = tableBuild;
