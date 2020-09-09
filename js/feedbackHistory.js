@@ -17,8 +17,6 @@ fetch(url)
         // Loop through the registrations and grab the subjects enrolled.
         Object.keys(data).forEach(function(key) {
             var value = data[key];
-            var studentID = value.studentID;
-            var studentName = value.studentName;
             // Loop through the subjects and gather the lecturers.
             Object.keys(value).forEach(function(key) {
                 var subjectValue = value[key];
@@ -26,6 +24,8 @@ fetch(url)
                 feedbackArray.push(subjectValue);
             });
         });
+
+        createRow(feedbackArray);
     });
 
 // Function to build the table with information from the JSON information gathered before.
@@ -36,16 +36,24 @@ function createRow(data) {
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     data.forEach(function(subject){
-        tableBuild += '<td data-title = "ID">'
+        tableBuild += '<td data-title = "ID"><br>'
         + subject.studentID
-        + '</td><td data-title = "CRN">'
-        + subject.CRN
-        + '</td><td data-title = "Name">'
+        + '</td><td data-title = "Name"><br>'
         + subject.studentName
-        + '</td><td data-title = "Subject">'
-        + subject.shortName
-        + '</td><td data-title = "Timing">'
-        + subject.term
+        + '</td><td data-title = "Date"><br>'
+        + subject.dateTime
+        + '</td><td data-title = "Subject"><br>'
+        + subject.subjectName
+        + '</td><td data-title = "Attendance"><br>'
+        + subject.attendanceRating
+        + '</td><td data-title = "Attendance Comment"><br>'
+        + subject.attendanceComment
+        + '</td><td data-title = "Attitude"><br>'
+        + subject.attitudeRating
+        + '</td><td data-title = "Attitude Comment"><br>'
+        + subject.attitudeComment
+        + '</td><td data-title = "Additional Comment"><br>'
+        + subject.additionalComments
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
