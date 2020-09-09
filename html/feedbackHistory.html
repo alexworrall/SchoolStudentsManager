@@ -15,7 +15,7 @@
 
         <link rel="stylesheet" href="../css/main.css">
         <!-- table styling was sourced from: https://codepen.io/zavoloklom/pen/IGkDz -->
-        <link rel="stylesheet" href="../css/viewFeedbackHistory.css">
+        <link rel="stylesheet" href="../css/feedbackHistory.css">
         <link rel="stylesheet" href="../css/tableStyle.css">
 
         <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
@@ -36,7 +36,7 @@
                     <ul class="menu">
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="generateFeedback.html">Feedback</a></li>
-                        <li><a href="feedbackHistory.html">History</a></li>
+                        <li><a href="viewStudentList.html">Student List</a></li>
                         <li><a href="viewCoordinators.html">Coordinators</a></li>
                     </ul>
                 </nav>
@@ -46,17 +46,17 @@
         <div class="main-container">
             <div class="main wrapper clearfix">
                         <form class="form">
-                            <h2 class="registerHeading">Feedback History</h2>
-                            <div class="animation a5 dropDown">
+                            <h2 class="registerHeading">Feedback History for all lecturers</h2>
+                            <!--<div class="animation a5 dropDown">
                                 <label class="formLabel" for="lecturerName">Lecturer Name</label>
                                 <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
                                     <option selected disabled hidden>Select Lecturer</option>
-                                    <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
+                                    Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
                                     <option value="Participant">Michelle Paelchen</option>
                                     <option value="Business">Stephen Learey</option>
-                                    <option value="Visitor">Frank Lynch</option>-->
+                                    <option value="Visitor">Frank Lynch</option>
                                 </select>
-                            </div>
+                            </div>-->
 
                             <div id="resultsTable">
                                 <h2>School students in your subjects</h2>
@@ -71,10 +71,14 @@
                                     <thead>
                                       <tr>
                                         <th>ID</th>
-                                        <th>CRN</th>
                                         <th>Name</th>
+                                        <th>Date</th>
                                         <th>Subject</th>
-                                        <th>Timing</th>
+                                        <th>Attendance</th>
+                                        <th>Attendance Comment</th>
+                                        <th>Attitude</th>
+                                        <th>Attitude Comment</th>
+                                        <th>Additional Comment</th>
                                       </tr>
                                     </thead>
                                     <tbody>
@@ -103,7 +107,6 @@
                                     </tbody>
                                   </table>
                                 </div>
-                                <h2 class="hideHeading">Select a lecturer from the drop down at the top to see their student list appear</h2>
                             </div>
                             
                             <button class="button animation a5" onclick="location.href='../index.html'"  type="button">HOME</button>
@@ -132,7 +135,7 @@
         
         <script src="../js/firebase.js"></script>
         <!-- My own javascript file -->
-        <script src="../js/viewStudentList.js"></script>
+        <script src="../js/feedbackHistory.js"></script>
       </div>
     </body>
 </html>

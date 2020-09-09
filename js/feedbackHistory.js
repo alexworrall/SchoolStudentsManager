@@ -2,7 +2,7 @@
 var jsonData = [];
 
 // Get the JSON from Firebase using the URL
-var url = 'https://schoolstudentmanager.firebaseio.com/registrations.json';
+var url = 'https://schoolstudentmanager.firebaseio.com/feedback.json';
 // Get the information from the firebase rest service in JSON
 fetch(url)
     .then(function(data) {
@@ -10,9 +10,6 @@ fetch(url)
     })
     .then(function(data) {
         // Grab the lecturer information from the JSON and show in the dropdown box.
-        //var list = data['Episodes'];
-        var sel = document.getElementById('lecturerName');
-        var lecturerArray = [];
         jsonData = data;
 
         // Create an array of the students details.
