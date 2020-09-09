@@ -176,7 +176,7 @@ body {
     width: 100%;
     position: absolute;
     bottom: 0;
-    height: 6.5rem;             /*Footer height */
+    /*height: 6.5rem;             Footer height */
 }
 
 .header-container,
@@ -592,7 +592,7 @@ nav a:hover {
     }
 
     body{
-        background: url("../img/TAFESABackgroundImageLarge.jpg") no-repeat 0 0;
+        background: url("../img/TAFESABackgroundImageLarge.jpg") no-repeat center center fixed;
     }
 
     /*
