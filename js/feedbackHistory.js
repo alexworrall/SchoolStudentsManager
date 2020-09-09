@@ -38,23 +38,23 @@ function createRow(data) {
     data.forEach(function(subject){
         tableBuild += '<td data-title = "ID"><br>'
         + subject.studentID
-        + '</td><td data-title = "Name"><br>'
+        + '<hr></td><td data-title = "Name"><br>'
         + subject.studentName
-        + '</td><td data-title = "Date"><br>'
+        + '<hr></td><td data-title = "Date"><br>'
         + subject.dateTime
-        + '</td><td data-title = "Subject"><br>'
+        + '<hr></td><td data-title = "Subject"><br>'
         + subject.subjectName
-        + '</td><td data-title = "Attendance"><br>'
+        + '<hr></td><td data-title = "Attendance"><br>'
         + subject.attendanceRating
-        + '</td><td data-title = "Attendance Comment"><br>'
+        + '<hr></td><td data-title = "Attendance Comment"><br>'
         + subject.attendanceComment
-        + '</td><td data-title = "Attitude"><br>'
+        + '<hr></td><td data-title = "Attitude"><br>'
         + subject.attitudeRating
-        + '</td><td data-title = "Attitude Comment"><br>'
+        + '<hr></td><td data-title = "Attitude Comment"><br>'
         + subject.attitudeComment
-        + '</td><td data-title = "Additional Comment"><br>'
+        + '<hr></td><td data-title = "Additional Comment"><br>'
         + subject.additionalComments
-        + '</td>';
+        + '<hr></td>';
 
         var newRow = tableRef.insertRow(-1);
         newRow.innerHTML = tableBuild;

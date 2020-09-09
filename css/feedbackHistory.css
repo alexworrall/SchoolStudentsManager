@@ -13,7 +13,25 @@
 * { box-sizing:border-box; }
 
 /* basic stylings ------------------------------------------ */
-  
+
+/* Override the table style CSS here as we want this table to look different with the feedback history page than the others*/
+.table-responsive-vertical > .table > tbody > tr > td {
+  background-color: #fff;
+  display: block;
+  text-align: left;
+}
+
+.table-responsive-vertical > .table > tbody > tr > td[data-title]:before {
+  content: attr(data-title);
+  float: left;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+.tableHR{
+  width: 30%;
+}
+
   .container {
     display: flex;
     height: 100%;
