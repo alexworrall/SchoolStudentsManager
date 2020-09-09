@@ -1,0 +1,138 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>View School Student List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="../favicon.ico"/>
+        <link rel="manifest" href="../manifest.json">
+
+        <link rel="stylesheet" href="../css/main.css">
+        <!-- table styling was sourced from: https://codepen.io/zavoloklom/pen/IGkDz -->
+        <link rel="stylesheet" href="../css/viewStudentList.css">
+        <link rel="stylesheet" href="../css/tableStyle.css">
+
+        <script src="../js/vendor/modernizr-2.8.3.min.js"></script>
+    </head>
+    <body>
+      <div class="page-container">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif] -->
+
+        <div class="header-container">
+            <header class="wrapper clearfix">
+                <img class="headerLogo" src="../img/TAFESA_Logo.png" alt="TAFE SA Header Logo Small">
+                <h1 class="title">Student List</h1>
+                <nav>
+                    <input class="menu-btn" type="checkbox" id="menu-btn" />
+                    <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+                    <ul class="menu">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="generateFeedback.html">Feedback</a></li>
+                        <li><a href="feedbackHistory.html">History</a></li>
+                        <li><a href="viewCoordinators.html">Coordinators</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+                        <form class="form">
+                            <h2 class="registerHeading">View your School Student List for your subjects</h2>
+                            <div class="animation a5 dropDown">
+                                <label class="formLabel" for="lecturerName">Lecturer Name</label>
+                                <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
+                                    <option selected disabled hidden>Select Lecturer</option>
+                                    <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
+                                    <option value="Participant">Michelle Paelchen</option>
+                                    <option value="Business">Stephen Learey</option>
+                                    <option value="Visitor">Frank Lynch</option>-->
+                                </select>
+                            </div>
+
+                            <div id="resultsTable">
+                                <h2>School students in your subjects</h2>
+                                
+                                <!-- Code for the table sourced from: https://codepen.io/zavoloklom/pen/IGkDz 
+                                It was then changed and tweaked for my project needs-->
+                                <!-- Responsive table starts here -->
+                                <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+                                <div class="table-responsive-vertical shadow-z-1">
+                                <!-- Table starts here -->
+                                <table id="table" class="table table-hover table-mc-light-blue">
+                                    <thead>
+                                      <tr>
+                                        <th>ID</th>
+                                        <th>CRN</th>
+                                        <th>Name</th>
+                                        <th>Subject</th>
+                                        <th>Timing</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <!--<tr>
+                                        <td data-title="ID">000123456</td>
+                                        <td data-title="CRN">3301</td>
+                                        <td data-title="Name">Bert Smith</td>
+                                        <td data-title="Subject">4BUI</td>
+                                        <td data-title="Timing">S2T1</td>
+                                      </tr>
+                                      <tr>
+                                        <td data-title="ID">000987654</td>
+                                        <td data-title="CRN">6924</td>
+                                        <td data-title="Name">Jane Doe</td>
+                                        <td data-title="Subject">5ICW</td>
+                                        <td data-title="Timing">S2T1</td>
+                                      </tr>
+                                      <tr>
+                                        <td data-title="ID">000913764</td>
+                                        <td data-title="CRN">1973</td>
+                                        <td data-title="Name">John Deer</td>
+                                        <td data-title="Subject">4DBB</td>
+                                        <td data-title="Timing">S2</td>
+                                      </tr>-->
+                                      
+                                    </tbody>
+                                  </table>
+                                </div>
+                                <h2 class="hideHeading">Select a lecturer from the drop down at the top to see their student list appear</h2>
+                            </div>
+                            
+                            <button class="button animation a5" onclick="location.href='../index.html'"  type="button">HOME</button>
+                          </form>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+
+        <div class="footer-container">
+            <footer class="wrapper">
+                <h3>© Copyright Alexander Worrall</h3>
+            </footer>
+        </div>
+
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <!--<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>-->
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+        
+        <script src="../js/firebase.js"></script>
+        <!-- My own javascript file -->
+        <script src="../js/viewStudentList.js"></script>
+      </div>
+    </body>
+</html>
