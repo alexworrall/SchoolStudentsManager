@@ -130,8 +130,10 @@ function studentChosen(dropDownValue){
                 meMarker.info.open(map, meMarker);
               });
 
+              // Add the users marker to the marker array for use in the bounds later
               markers.push(meMarker);
 
+              // Loop through all markers and extend the map bounds to fit the markers
               var bounds = new google.maps.LatLngBounds();
               for (var i = 0; i < markers.length; i++) {
                   bounds.extend(markers[i].getPosition());
