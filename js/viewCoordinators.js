@@ -102,6 +102,9 @@ function studentChosen(dropDownValue){
         var marker = new google.maps.Marker({position: school, map: map});
 
         var infoWindow = new google.maps.InfoWindow;
+
+        var markers = [];
+        markers.push(marker);
         
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -111,19 +114,31 @@ function studentChosen(dropDownValue){
                 lng: position.coords.longitude
               };
   
-              infoWindow.setPosition(pos);
-              infoWindow.setContent('You are here');
+              //infoWindow.setPosition(pos);
+              //infoWindow.setContent('You are here');
 
-              infoWindow.open(map);
-              map.setCenter(school);
+              //infoWindow.open(map);
+              //map.setCenter(school);
               
-              /*
-              map.fitBounds(new google.maps.LatLngBounds(
-                //bottom left
-                new google.maps.LatLng(lat_min, lng_min),
-                //top right
-                new google.maps.LatLng(lat_max, lng_max)
-              ));*/
+              var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
+              meMarker.info = new google.maps.InfoWindow({
+                content: 'You are here'
+              });
+              
+              // Listener for the users map icon
+              google.maps.event.addListener(meMarker, 'click', function() {
+                meMarker.info.open(map, meMarker);
+              });
+
+              markers.push(meMarker);
+
+              var bounds = new google.maps.LatLngBounds();
+              for (var i = 0; i < markers.length; i++) {
+                  bounds.extend(markers[i].getPosition());
+              }
+
+              // Make the map fit the bounds we just gathered
+              map.fitBounds(bounds);
 
             }, function() {
               handleLocationError(true, infoWindow, map.getCenter());
