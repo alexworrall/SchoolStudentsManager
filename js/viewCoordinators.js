@@ -150,6 +150,7 @@ function studentChosen(dropDownValue){
             handleLocationError(false, infoWindow, map.getCenter());
           }
         
+        // Style the map container to show the map at the right size 
         var mapOuter = document.querySelector('.mapContainer');
         mapOuter.style.visibility = "visible";
         mapOuter.style.height = "350px";
