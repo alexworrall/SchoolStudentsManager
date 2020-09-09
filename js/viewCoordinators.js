@@ -113,13 +113,8 @@ function studentChosen(dropDownValue){
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
               };
-  
-              //infoWindow.setPosition(pos);
-              //infoWindow.setContent('You are here');
-
-              //infoWindow.open(map);
-              //map.setCenter(school);
               
+              // Add a marker for the user and make it blue to stand out
               var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
               meMarker.info = new google.maps.InfoWindow({
                 content: 'You are here'
