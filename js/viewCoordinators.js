@@ -119,6 +119,8 @@ function studentChosen(dropDownValue){
               meMarker.info = new google.maps.InfoWindow({
                 content: 'You are here'
               });
+
+              meMarker.info.open(map, meMarker);
               
               // Listener for the users map icon
               google.maps.event.addListener(meMarker, 'click', function() {
