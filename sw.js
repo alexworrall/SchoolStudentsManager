@@ -9,10 +9,13 @@ var urlsToCache = [
   '/SchoolStudentsManager/css/tableStyle.css',
   '/SchoolStudentsManager/css/viewCoordinators.css',
   '/SchoolStudentsManager/css/viewStudentList.css',
+  '/SchoolStudentsManager/css/modifiedTableStyle.css',
+  '/SchoolStudentsManager/css/feedbackHistory.css',
   '/SchoolStudentsManager/js/main.js',
   '/SchoolStudentsManager/js/feedback.js',
   '/SchoolStudentsManager/js/firebase.js',
   '/SchoolStudentsManager/js/viewCoordinators.js',
+  '/SchoolStudentsManager/js/feedbackHistory.js',
   '/SchoolStudentsManager/js/viewStudentList.js'
 ];
 
