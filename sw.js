@@ -20,7 +20,7 @@ var urlsToCache = [
   '/SchoolStudentsManager/js/firebase.js',
   '/SchoolStudentsManager/js/viewCoordinators.js',
   '/SchoolStudentsManager/js/feedbackHistory.js',
-  '/SchoolStudentsManager/js/viewStudentList.js',
+  '/SchoolStudentsManager/js/viewStudentList.js'
 ];
 
 self.addEventListener('install', function(event) {
