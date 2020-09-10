@@ -3,6 +3,7 @@ var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION;
 var urlsToCache = [
   '/SchoolStudentsManager/',
+  '/SchoolStudentsManager/index.html',
   '/SchoolStudentsManager/html/feedbackHistory.html',
   '/SchoolStudentsManager/html/generateFeedback.html',
   '/SchoolStudentsManager/html/viewCoordinators.html',
