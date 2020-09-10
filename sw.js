@@ -3,20 +3,9 @@ var CACHE_VERSION = 'v1';
 var CACHE_NAME = CACHE_TITLE + '-' + CACHE_VERSION;
 var urlsToCache = [
   '/SchoolStudentsManager/',
-  '/SchoolStudentsManager/css/main.css',
-  '/SchoolStudentsManager/css/generateFeedback.css',
-  '/SchoolStudentsManager/css/normalize.css',
-  '/SchoolStudentsManager/css/tableStyle.css',
-  '/SchoolStudentsManager/css/viewCoordinators.css',
-  '/SchoolStudentsManager/css/viewStudentList.css',
-  '/SchoolStudentsManager/css/modifiedTableStyle.css',
-  '/SchoolStudentsManager/css/feedbackHistory.css',
-  '/SchoolStudentsManager/js/main.js',
-  '/SchoolStudentsManager/js/feedback.js',
-  '/SchoolStudentsManager/js/firebase.js',
-  '/SchoolStudentsManager/js/viewCoordinators.js',
-  '/SchoolStudentsManager/js/feedbackHistory.js',
-  '/SchoolStudentsManager/js/viewStudentList.js'
+  '/SchoolStudentsManager/css/**',
+  '/SchoolStudentsManager/js/**',
+  '/SchoolStudentsManager/html/**'
 ];
 
 self.addEventListener('install', function(event) {
