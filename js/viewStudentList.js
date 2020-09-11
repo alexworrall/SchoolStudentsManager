@@ -43,7 +43,6 @@ fetch(url)
             opt.innerHTML = item;
             opt.value = item;
             sel.appendChild(opt);
-            //console.log(item)
         })
     });
 

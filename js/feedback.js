@@ -43,7 +43,6 @@ fetch(url)
             opt.innerHTML = item;
             opt.value = item;
             sel.appendChild(opt);
-            //console.log(item)
         })
     });
 
@@ -58,7 +57,6 @@ function lecturerChosen(dropDownValue){
     // Loop through the registrations and grab the subjects enrolled.
     Object.keys(jsonData).forEach(function(key) {
         var value = jsonData[key];
-        console.log(value);
         if (!studentsArray.includes(value['studentName']) && value['studentName'] != undefined){
             // Not duplicate, add to array.
             studentsArray.push(value['studentName']);
@@ -86,7 +84,6 @@ function lecturerChosen(dropDownValue){
         opt.innerHTML = item;
         opt.value = item;
         sel.appendChild(opt);
-        //console.log(item)
     })
 
     // Validate the lecturer dropdown now that it has been changed to something.
