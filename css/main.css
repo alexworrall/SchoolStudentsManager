@@ -274,11 +274,15 @@ nav a:hover {
 }
 
 .headerLogo{
-    max-width: 100%;
+    /*max-width: 100%;
     box-sizing: border-box;
     vertical-align: bottom;
     margin-left: 0px;
-    visibility: visible;
+    visibility: visible;*/
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
 }
 
 .smallMainMenuButton1{
