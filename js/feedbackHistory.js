@@ -36,7 +36,7 @@ function createRow(data) {
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     data.forEach(function(subject){
-        tableBuild += '<h4>Feedback for student: ' + subject.studentName + '</h4><td data-title = "ID"><br>'
+        tableBuild += '<p class="studentHeading">Feedback for student: ' + subject.studentName + '</p><td data-title = "ID"><br>'
         + subject.studentID
         + '</td><td data-title = "Name"><br>'
         + subject.studentName
