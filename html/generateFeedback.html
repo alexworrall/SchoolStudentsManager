@@ -43,12 +43,12 @@
 
             <div class="main-container">
                 <div class="main wrapper clearfix">
-                            <form class="form">
+                            <form class="form" onsubmit ="return(validateForm());">
                                 <h2 class="registerHeading">Give feedback for school students in your subjects</h2>
                                 <div id="lecturerDropdownDiv" class="animation a5 dropDown">
                                     <label class="formLabel" for="lecturerName">Lecturer Name</label>
-                                    <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);">
-                                        <option selected disabled hidden>Select Lecturer</option>
+                                    <select class="form-select" id="lecturerName" onchange="lecturerChosen(this.value);" required>
+                                        <option selected disabled hidden value="">Select Lecturer</option>
                                         <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
                                         <option value="Participant">Michelle Paelchen</option>
                                         <option value="Business">Stephen Learey</option>
@@ -57,8 +57,8 @@
                                 </div>
                                 <div id="studentDropdownDiv" class="animation a5 dropDown">
                                     <label class="formLabel" for="studentName">Student Name</label>
-                                    <select class="form-select" id="studentName" onchange="studentChosen(this.value);" disabled>
-                                        <option selected disabled hidden>Select Student</option>
+                                    <select class="form-select" id="studentName" onchange="studentChosen(this.value);" disabled required>
+                                        <option selected disabled hidden value="">Select Student</option>
                                     </select>
                                 </div>
                                 <!--<label class="formLabel" for="registerEmail" class="registerLabel">Email</label>
@@ -68,11 +68,11 @@
                                 <h3>Attendance</h3>
                                 <div id="attendanceContainer" class="attendanceContainer">
                                     <!-- Radio buttons for Attendance -->
-                                    <input type="radio" id="attPoor" name="radioAttendance" value="poor">
+                                    <input type="radio" id="attPoor" name="radioAttendance" value="poor" required>
                                     <label for="attPoor" class="radioLabel">Poor</label>
-                                    <input type="radio" id="attFair" name="radioAttendance" value="fair">
+                                    <input type="radio" id="attFair" name="radioAttendance" value="fair" required>
                                     <label for="attFair" class="radioLabel">Fair</label>
-                                    <input type="radio" id="attExcellent" name="radioAttendance" value="excellent">
+                                    <input type="radio" id="attExcellent" name="radioAttendance" value="excellent" required>
                                     <label for="attExcellent" class="radioLabel">Excellent</label>
                                 </div>
 
@@ -82,11 +82,11 @@
                                 <h3>Attitude</h3>
                                 <div id="attitudeContainer" class="attitudeContainer">
                                     <!-- Radio buttons for Attendance -->
-                                    <input type="radio" id="attitudePoor" name="radioAttitude" value="poor">
+                                    <input type="radio" id="attitudePoor" name="radioAttitude" value="poor" required>
                                     <label for="attitudePoor" class="radioLabel">Poor</label>
-                                    <input type="radio" id="attitudeFair" name="radioAttitude" value="fair">
+                                    <input type="radio" id="attitudeFair" name="radioAttitude" value="fair" required>
                                     <label for="attitudeFair" class="radioLabel">Fair</label>
-                                    <input type="radio" id="attitudeExcellent" name="radioAttitude" value="excellent">
+                                    <input type="radio" id="attitudeExcellent" name="radioAttitude" value="excellent" required>
                                     <label for="attitudeExcellent" class="radioLabel">Excellent</label>
                                 </div>
 
@@ -97,7 +97,8 @@
                                 <label for="registerComments" class="formLabel animation a5">Further Comments</label>
                                 <textarea id="registerComments" class="form-textarea animation a5" cols="10" rows="5" placeholder="Enter any extra comments or requests here"></textarea>
 
-                                <button id="submitFeedbackBtn" class="button animation a5">SUBMIT FEEDBACK</button>
+                                <input class="button animation a5" type="submit" value ="Submit Feedback" />
+                                <!--<button id="submitFeedbackBtn" class="button animation a5">SUBMIT FEEDBACK</button>-->
                             </form>
                 </div> <!-- #main -->
             </div> <!-- #main-container -->

@@ -143,9 +143,20 @@ function validateAttitudeRadio(){
 }
 
 var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
-  
+
+function validateForm(){
+    // Check lecturer Dropdown
+    validateLecturerDropdown();
+    // Check student Dropdown
+    validateStudentDropdown();
+    // Check attendance radio buttons
+    validateAttendanceRadio();
+    // Check attitude radio buttons
+    validateAttitudeRadio();
+}
+
 // Use the event listener to the submit button to send the feedback through firebase.
-submitFeedbackBtn.addEventListener('click', function(evt) {
+/*submitFeedbackBtn.addEventListener('click', function(evt) {
     evt.preventDefault();
 
     // Check lecturer Dropdown
@@ -156,7 +167,7 @@ submitFeedbackBtn.addEventListener('click', function(evt) {
     validateAttendanceRadio();
     // Check attitude radio buttons
     validateAttitudeRadio();
-});
+});*/
 
 // Event listener for the attendance radio buttons
 if (document.querySelector('input[name="radioAttendance"]')) {
