@@ -115,7 +115,7 @@ function studentChosen(dropDownValue){
               };
               
               // Add a marker for the user and make it blue to stand out
-              var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
+              var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
               meMarker.info = new google.maps.InfoWindow({
                 content: 'You are here'
               });
