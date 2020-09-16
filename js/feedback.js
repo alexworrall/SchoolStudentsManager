@@ -31,8 +31,21 @@ subjects.get().then(function (querySnapshot) {
 function lecturerChosen(dropDownValue){
     document.getElementById("studentName").disabled=false;
 
-    // Search the JSON data for student details which match the lecturer. Once the lecturer is chosen from the dropdown,
-    // check the JSON information for a matching lecturer name in the registrations.
+    var sel = document.getElementById('studentName');
+        
+    //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
+    var i, L = sel.options.length - 1;
+    for(i = L; i >= 0; i--) {
+        sel.remove(i);
+    }
+
+    // Populate the drop down box
+    // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
+    // not all students but for time saving i will show all students and tweak later.
+    var opt = document.createElement('option');
+    opt.innerHTML = "Select Student";
+    opt.value = "";
+    sel.appendChild(opt);
 
     var studentsArray = [];
     var students = db.collectionGroup('subjects');
@@ -46,38 +59,21 @@ function lecturerChosen(dropDownValue){
                 if (!studentsArray.includes(studentName) && studentName != undefined){
                     // Not duplicate, add to array.
                     studentsArray.push(studentName);
+                    // Add those students to the drop down box
+                    opt = document.createElement('option');
+                    opt.innerHTML = studentName;
+                    opt.value = studentName;
+                    sel.appendChild(opt);
                 }
+                
+                // Validate the lecturer dropdown now that it has been changed to something.
+                validateLecturerDropdown();
             });
-            //console.log(doc.id, ' => ', doc.data());
         });
 
-        var sel = document.getElementById('studentName');
-    
-        //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
-        var i, L = sel.options.length - 1;
-        for(i = L; i >= 0; i--) {
-            sel.remove(i);
-        }
-
-        // Populate the drop down box
-        // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
-        // not all students but for time saving i will show all students and tweak later.
-        var opt = document.createElement('option');
-        opt.innerHTML = "Select Student";
-        opt.value = "";
-        sel.appendChild(opt);
-        studentsArray.forEach(function(item, array) {
-            // Add those students to the drop down box
-            opt = document.createElement('option');
-            opt.innerHTML = item;
-            opt.value = item;
-            sel.appendChild(opt);
-        })
-
-        // Validate the lecturer dropdown now that it has been changed to something.
-        validateLecturerDropdown();
     });
 
+    
 }
 
 function studentChosen(dropDownValue){
