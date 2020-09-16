@@ -1,10 +1,12 @@
 // Create empty variable for the JSON data to be used later to reduce down the API calls.
 var jsonData;
 
+
+
 // Get the JSON from Firebase using the URL
-var url = 'https://schoolstudentmanager.firebaseio.com/registrations.json';
+//var url = 'https://schoolstudentmanager.firebaseio.com/registrations.json';
 // Get the information from the firebase rest service in JSON
-fetch(url)
+/* fetch(url)
     .then(function(data) {
         return data.json()
     })
@@ -44,7 +46,7 @@ fetch(url)
             opt.value = item;
             sel.appendChild(opt);
         })
-    });
+    }); */
 
 
 function lecturerChosen(dropDownValue){
