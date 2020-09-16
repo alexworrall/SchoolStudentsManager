@@ -10,6 +10,10 @@ var firebaseConfig = {
     measurementId: "G-GXLFCNHP94"
 };
 
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Get a reference to the database service
+//var database = firebase.database();
 firebase.firestore().enablePersistence()
   .catch(function(err) {
       if (err.code == 'failed-precondition') {
@@ -22,8 +26,3 @@ firebase.firestore().enablePersistence()
           // ...
       }
   });
-
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// Get a reference to the database service
-//var database = firebase.database();
