@@ -2,18 +2,36 @@
 var jsonData;
 
 var db = firebase.firestore();
+// Grab the lecturer information from the JSON and show in the dropdown box.
+//var list = data['Episodes'];
+var sel = document.getElementById('lecturerName');
+var lecturerArray = [];
 
-// Get all the documents from the students collection
-db.collection("students").get().then(function(querySnapshot) {
+var subjects = db.collectionGroup('subjects');
+subjects.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        console.log(doc.id, ' => ', doc.data());
+
+        
+    });
+});
+
+
+/* // Get all the documents from the students collection
+db.collection("registrations").get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
         // doc.data() is never undefined for query doc snapshots
+        doc.ref.collection("subjects").get().then((querySnapshot2) => {
+            console.log(querySnapshot2.id, " => ", querySnapshot2.data());
+          });
         console.log(doc.id, " => ", doc.data());
+        console.log(doc.data().studentID);
     });
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-
+ */
 // Get the JSON from Firebase using the URL
 //var url = 'https://schoolstudentmanager.firebaseio.com/registrations.json';
 // Get the information from the firebase rest service in JSON
