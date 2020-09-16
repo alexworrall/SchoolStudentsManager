@@ -7,6 +7,7 @@ var db = firebase.firestore();
 var sel = document.getElementById('lecturerName');
 var lecturerArray = [];
 
+//Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
@@ -34,40 +35,49 @@ function lecturerChosen(dropDownValue){
     // check the JSON information for a matching lecturer name in the registrations.
 
     var studentsArray = [];
-    // Loop through the registrations and grab the subjects enrolled.
-    Object.keys(jsonData).forEach(function(key) {
-        var value = jsonData[key];
-        if (!studentsArray.includes(value['studentName']) && value['studentName'] != undefined){
-            // Not duplicate, add to array.
-            studentsArray.push(value['studentName']);
+    var students = db.collectionGroup('subjects');
+    students.get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            const ref = doc.ref;
+            const userRef = ref.parent.parent;
+            userRef.get().then(parentSnap => {
+                const user = parentSnap.data();
+                const studentName = user.studentName;
+                if (!studentsArray.includes(studentName) && studentName != undefined){
+                    // Not duplicate, add to array.
+                    studentsArray.push(studentName);
+                }
+            });
+            //console.log(doc.id, ' => ', doc.data());
+        });
+
+        var sel = document.getElementById('studentName');
+    
+        //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
+        var i, L = sel.options.length - 1;
+        for(i = L; i >= 0; i--) {
+            sel.remove(i);
         }
+
+        // Populate the drop down box
+        // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
+        // not all students but for time saving i will show all students and tweak later.
+        var opt = document.createElement('option');
+        opt.innerHTML = "Select Student";
+        opt.value = "";
+        sel.appendChild(opt);
+        studentsArray.forEach(function(item, array) {
+            // Add those students to the drop down box
+            opt = document.createElement('option');
+            opt.innerHTML = item;
+            opt.value = item;
+            sel.appendChild(opt);
+        })
+
+        // Validate the lecturer dropdown now that it has been changed to something.
+        validateLecturerDropdown();
     });
 
-    var sel = document.getElementById('studentName');
-    
-    //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
-    var i, L = sel.options.length - 1;
-    for(i = L; i >= 0; i--) {
-        sel.remove(i);
-    }
-
-    // Populate the drop down box
-    // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
-    // not all students but for time saving i will show all students and tweak later.
-    var opt = document.createElement('option');
-    opt.innerHTML = "Select Student";
-    opt.value = "";
-    sel.appendChild(opt);
-    studentsArray.forEach(function(item, array) {
-        // Add those students to the drop down box
-        opt = document.createElement('option');
-        opt.innerHTML = item;
-        opt.value = item;
-        sel.appendChild(opt);
-    })
-
-    // Validate the lecturer dropdown now that it has been changed to something.
-    validateLecturerDropdown();
 }
 
 function studentChosen(dropDownValue){
