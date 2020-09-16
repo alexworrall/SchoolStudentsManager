@@ -11,10 +11,21 @@ var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         console.log(doc.id, ' => ', doc.data());
-
-        
+        if (!lecturerArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
+            // Not duplicate, add to array.
+            lecturerArray.push(doc.data().lecturer);
+        }
     });
 });
+
+// Populate the drop down box
+lecturerArray.forEach(function(item, array) {
+    // Add those lecturers to the drop down box
+    var opt = document.createElement('option');
+    opt.innerHTML = item;
+    opt.value = item;
+    sel.appendChild(opt);
+})
 
 
 /* // Get all the documents from the students collection
