@@ -90,8 +90,10 @@ function validateLecturerDropdown(){
     var lecturerDropdownDiv = document.getElementById('lecturerDropdownDiv');
     if(lecturerDropdown.selectedIndex == 0){  //Test if something was checked
         lecturerDropdownDiv.style.backgroundColor = '#ff9999';
+        return false;
     }else{
         lecturerDropdownDiv.style.backgroundColor = '#6fe99a';
+        return true;
     } 
 }
 
@@ -101,8 +103,10 @@ function validateStudentDropdown(){
     var studentDropdownDiv = document.getElementById('studentDropdownDiv');
     if(studentDropdown.selectedIndex == 0){  //Test if something was checked
         studentDropdownDiv.style.backgroundColor = '#ff9999';
+        return false;
     }else{
         studentDropdownDiv.style.backgroundColor = '#6fe99a';
+        return true;
     } 
 }
 
@@ -112,8 +116,10 @@ function validateAttendanceRadio(){
     var attendanceContainer = document.getElementById('attendanceContainer');
     if(checked_attendance == null){  //Test if something was checked
         attendanceContainer.style.backgroundColor = '#ff9999';
+        return false;
     }else{
         attendanceContainer.style.backgroundColor = '#6fe99a';
+        return true;
     } 
 }
 
@@ -123,8 +129,10 @@ function validateAttitudeRadio(){
     var attitudeContainer = document.getElementById('attitudeContainer');
     if(checked_attitude == null){  //Test if something was checked
         attitudeContainer.style.backgroundColor = '#ff9999';
+        return false;
     }else{
         attitudeContainer.style.backgroundColor = '#6fe99a';
+        return true;
     } 
 }
 
@@ -132,13 +140,32 @@ var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
 
 function validateForm(){
     // Check lecturer Dropdown
-    validateLecturerDropdown();
+    var lectValid = validateLecturerDropdown();
     // Check student Dropdown
-    validateStudentDropdown();
+    var studentValid = validateStudentDropdown();
     // Check attendance radio buttons
-    validateAttendanceRadio();
+    var attendanceValid = validateAttendanceRadio();
     // Check attitude radio buttons
-    validateAttitudeRadio();
+    var attitudeValid = validateAttitudeRadio();
+
+    // Be 100% sure that there are no items missing before submitting to firebase
+    if (lectValid == false | studentValid == false | attendanceValid == false | attitudeValid == false){
+        return false;
+    }else{
+        // Submit items to firebase
+        // Add a new document with a generated id.
+        /* db.collection("feedback").add({
+            name: "Tokyo",
+            country: "Japan"
+        })
+        .then(function(docRef) {
+            console.log("Document written with ID: ", docRef.id);
+        })
+        .catch(function(error) {
+            console.error("Error adding document: ", error);
+        }); */
+        return true;
+    }
 }
 
 // Use the event listener to the submit button to send the feedback through firebase.
