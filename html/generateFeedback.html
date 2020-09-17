@@ -65,6 +65,32 @@
                                 <input type="email" id="registerEmail" class="form-field animation a5" name="registerEmail" placeholder="Email Address" required>
                                 -->
                                 
+                                <!-- The subjects that the student is enrolled into will show in this table. You need to select the items to move forward -->
+                                <div id="resultsTable">
+                                    <p>Select subject</p>
+                                    
+                                    <!-- Code for the table sourced from: https://codepen.io/zavoloklom/pen/IGkDz 
+                                    It was then changed and tweaked for my project needs-->
+                                    <!-- Responsive table starts here -->
+                                    <!-- For correct display on small screens you must add 'data-title' to each 'td' in your table -->
+                                    <div class="table-responsive-vertical shadow-z-1">
+                                    <!-- Table starts here -->
+                                    <table id="table" class="table table-hover table-mc-light-blue">
+                                        <thead>
+                                          <tr>
+                                            <th>CRN</th>
+                                            <th>Code</th>
+                                            <th>Name</th>
+                                            <th>Timing</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                </div>
+                                
                                 <h3>Attendance</h3>
                                 <div id="attendanceContainer" class="attendanceContainer">
                                     <!-- Radio buttons for Attendance -->
