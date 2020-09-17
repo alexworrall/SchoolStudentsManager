@@ -20,17 +20,18 @@ subjects.get().then(function (querySnapshot) {
     
     // Populate the drop down box
     lecturerArray.forEach(function(item, array) {
-    // Add those lecturers to the drop down box
-    var opt = document.createElement('option');
-    opt.innerHTML = item;
-    opt.value = item;
-    sel.appendChild(opt);
-})
+        // Add those lecturers to the drop down box
+        var opt = document.createElement('option');
+        opt.innerHTML = item;
+        opt.value = item;
+        sel.appendChild(opt);
+    })
 });
 
 function lecturerChosen(dropDownValue){
-    document.getElementById("studentName").disabled=false;
 
+    // Make the student drop down disabled while the firebase query works
+    document.getElementById("studentName").disabled=true;
     var sel = document.getElementById('studentName');
         
     //Remove existing elements in the drop down box to prevent it appending to the end and having a long list
@@ -53,6 +54,7 @@ function lecturerChosen(dropDownValue){
         querySnapshot.forEach(function (doc) {
             const ref = doc.ref;
             const userRef = ref.parent.parent;
+
             userRef.get().then(parentSnap => {
                 const user = parentSnap.data();
                 const studentName = user.studentName;
@@ -68,6 +70,7 @@ function lecturerChosen(dropDownValue){
                 
                 // Validate the lecturer dropdown now that it has been changed to something.
                 validateLecturerDropdown();
+                document.getElementById("studentName").disabled=false;
             });
         });
 
