@@ -6,12 +6,14 @@ var db = firebase.firestore();
 //var list = data['Episodes'];
 var sel = document.getElementById('lecturerName');
 var lecturerArray = [];
+// Array to hold all the subjects for the chosen student
+var subjectArray = [];
 
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-        console.log(doc.id, ' => ', doc.data());
+        //console.log(doc.id, ' => ', doc.data());
         if (!lecturerArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
             // Not duplicate, add to array.
             lecturerArray.push(doc.data().lecturer);
@@ -49,9 +51,12 @@ function lecturerChosen(dropDownValue){
     sel.appendChild(opt);
 
     var studentsArray = [];
-    var students = db.collectionGroup('subjects');
-    students.get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
+    db.collectionGroup("subjects").where("lecturer", "==", dropDownValue)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
             const ref = doc.ref;
             const userRef = ref.parent.parent;
 
@@ -73,9 +78,10 @@ function lecturerChosen(dropDownValue){
                 document.getElementById("studentName").disabled=false;
             });
         });
-
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
     });
-
     
 }
 
@@ -154,7 +160,7 @@ function validateForm(){
     }else{
         // Submit items to firebase
         // Add a new document with a generated id.
-        db.collection("feedback").add({
+        /*db.collection("feedback").add({
             studentID: "Tokyo",
             studentName: "Japan",
             subjectName: "Japan",
@@ -170,7 +176,7 @@ function validateForm(){
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
-        });
+        });*/
         return true;
     }
 }
