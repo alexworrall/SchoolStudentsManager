@@ -154,16 +154,23 @@ function validateForm(){
     }else{
         // Submit items to firebase
         // Add a new document with a generated id.
-        /* db.collection("feedback").add({
-            name: "Tokyo",
-            country: "Japan"
+        db.collection("feedback").add({
+            studentID: "Tokyo",
+            studentName: "Japan",
+            subjectName: "Japan",
+            dateTime: "Japan",
+            attitudeRating: "Japan",
+            attitudeComment: "Japan",
+            attendanceRating: "Japan",
+            attendanceComment: "Japan",
+            additionalComments: "Japan"
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
-        }); */
+        });
         return true;
     }
 }
