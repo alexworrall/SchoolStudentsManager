@@ -271,10 +271,12 @@ function highlight_row() {
             var rowsNotSelected = table.getElementsByTagName('tr');
             for (var row = 0; row < rowsNotSelected.length; row++) {
                 rowsNotSelected[row].style.backgroundColor = "";
+                rowsNotSelected[row].style.border = "";
                 rowsNotSelected[row].classList.remove('selected');
             }
             var rowSelected = table.getElementsByTagName('tr')[rowId];
             rowSelected.style.backgroundColor = "#6fe99a";
+            rowSelected.style.border = "thick solid #4456ea";
             rowSelected.className += " selected";
         }
     }
