@@ -250,11 +250,14 @@ function createRow(data) {
         newRow.innerHTML = tableBuild;
         tableBuild = "";
     });
+
+    // Now table is created, add the onclick items
+    highlight_row();
 }
 
 // Function retrieved from https://jsfiddle.net/armaandhir/Lgt1j68s/
 function highlight_row() {
-    var table = document.getElementById('display-table');
+    var table = document.getElementById('table');
     var cells = table.getElementsByTagName('td');
 
     for (var i = 0; i < cells.length; i++) {
@@ -271,12 +274,8 @@ function highlight_row() {
                 rowsNotSelected[row].classList.remove('selected');
             }
             var rowSelected = table.getElementsByTagName('tr')[rowId];
-            rowSelected.style.backgroundColor = "yellow";
+            rowSelected.style.backgroundColor = "#6fe99a";
             rowSelected.className += " selected";
-
-            msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
-            msg += '\nThe cell value is: ' + this.innerHTML;
-            alert(msg);
         }
     }
 

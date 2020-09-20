@@ -212,7 +212,7 @@ import Roboto Font ---------------------------- */
     margin-bottom: 1.6rem;
   }
   .table-responsive-vertical > .table > tbody > tr > td {
-    background-color: #fff;
+    /*background-color: #fff;*/
     display: block;
     vertical-align: middle;
     text-align: right;
