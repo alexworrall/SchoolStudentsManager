@@ -56,7 +56,7 @@ function lecturerChosen(dropDownValue){
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data(), doc.data().studentName);
+            //console.log(doc.id, " => ", doc.data(), doc.data().studentName);
             if (!studentsArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
                 // Not duplicate, add to array.
                 studentsArray.push(doc.data().studentName);
@@ -81,6 +81,26 @@ function lecturerChosen(dropDownValue){
 function studentChosen(dropDownValue){
     // Validate the student drop down now it has been changed
     validateStudentDropdown();
+
+    subjectArray = [];
+    db.collectionGroup("subjects").where("studentName", "==", dropDownValue)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // Not duplicate, add to array.
+            subjectArray.push(doc);
+            // Add those students to the drop down box
+
+            // Validate the lecturer dropdown now that it has been changed to something.
+            validateLecturerDropdown();
+            document.getElementById("studentName").disabled=false;
+        });
+        // Pass the newly filled subject array to the createrow function which will populate the table
+        createRow(subjectArray);
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
 }
 
 function validateLecturerDropdown(){
@@ -217,13 +237,13 @@ function createRow(data) {
 
     data.forEach(function(subject){
         tableBuild += '<td data-title = "CRN">'
-        + subject.CRN
+        + subject.data().CRN
         + '</td><td data-title = "Code">'
-        + subject.shortName
+        + subject.data().shortName
         + '</td><td data-title = "Name">'
-        + subject.longName
+        + subject.data().longName
         + '</td><td data-title = "Timing">'
-        + subject.term
+        + subject.data().term
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
