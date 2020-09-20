@@ -56,27 +56,20 @@ function lecturerChosen(dropDownValue){
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-            const ref = doc.ref;
-            const userRef = ref.parent.parent;
-
-            userRef.get().then(parentSnap => {
-                const user = parentSnap.data();
-                const studentName = user.studentName;
-                if (!studentsArray.includes(studentName) && studentName != undefined){
-                    // Not duplicate, add to array.
-                    studentsArray.push(studentName);
-                    // Add those students to the drop down box
-                    opt = document.createElement('option');
-                    opt.innerHTML = studentName;
-                    opt.value = studentName;
-                    sel.appendChild(opt);
-                }
+            console.log(doc.id, " => ", doc.data(), doc.data().studentName);
+            if (!studentsArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
+                // Not duplicate, add to array.
+                studentsArray.push(doc.data().studentName);
+                // Add those students to the drop down box
+                opt = document.createElement('option');
+                opt.innerHTML = doc.data().studentName;
+                opt.value = doc.data().studentName;
+                sel.appendChild(opt);
+            }
                 
                 // Validate the lecturer dropdown now that it has been changed to something.
                 validateLecturerDropdown();
                 document.getElementById("studentName").disabled=false;
-            });
         });
     })
     .catch(function(error) {
