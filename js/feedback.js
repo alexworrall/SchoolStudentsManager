@@ -9,6 +9,9 @@ var lecturerArray = [];
 // Array to hold all the subjects for the chosen student
 var subjectArray = [];
 
+// variable to hold the status of the table and whether a row is selected or not
+var subjectSelected = false;
+
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
@@ -155,6 +158,16 @@ function validateAttitudeRadio(){
     } 
 }
 
+function validateSubjectTable(){
+    if(subjectSelected == false){
+        document.getElementById('table').style.border = "thick solid Red";
+        document.getElementById('resultsTable').style.backgroundColor = '#6fe99a';
+        return false;
+    }else{
+        return true;
+    }
+}
+
 var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
 
 function validateForm(){
@@ -162,13 +175,15 @@ function validateForm(){
     var lectValid = validateLecturerDropdown();
     // Check student Dropdown
     var studentValid = validateStudentDropdown();
+    // Check that a subject is selected
+    var subjectValid = validateSubjectTable();
     // Check attendance radio buttons
     var attendanceValid = validateAttendanceRadio();
     // Check attitude radio buttons
     var attitudeValid = validateAttitudeRadio();
 
     // Be 100% sure that there are no items missing before submitting to firebase
-    if (lectValid == false | studentValid == false | attendanceValid == false | attitudeValid == false){
+    if (lectValid == false | studentValid == false | subjectValid == false | attendanceValid == false | attitudeValid == false){
         return false;
     }else{
         // Submit items to firebase
@@ -253,7 +268,7 @@ function createRow(data) {
         tableBuild = "";
     });
 
-    // Now table is created, add the onclick items
+    // Now table is created, add the onclick items for the cells
     highlight_row();
 }
 
@@ -280,6 +295,8 @@ function highlight_row() {
             rowSelected.style.backgroundColor = "#6fe99a";
             rowSelected.style.border = "thick solid #4456ea";
             rowSelected.className += " selected";
+            // Set the subject selected flag to true
+            subjectSelected = true;
         }
     }
 
