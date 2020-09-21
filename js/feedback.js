@@ -162,7 +162,7 @@ function validateAttitudeRadio(){
 function validateSubjectTable(){
     if(subjectSelected == false){
         document.getElementById('table').style.border = "thick solid Red";
-        document.getElementById('resultsTable').style.backgroundColor = '#ff9999';
+        document.getElementById('subjectSelectorHeading').style.backgroundColor = '#ff9999';
         return false;
     }else{
         return true;
@@ -173,7 +173,7 @@ function clearFormFields(){
     // Clear the table ready for next student
     document.getElementById('table').style.border = '';
     // Clear the results table background colour
-    document.getElementById('resultsTable').style.backgroundColor = '';
+    document.getElementById('subjectSelectorHeading').style.backgroundColor = '';
     // Nothing is selected anymore, set flag
     subjectSelected = false;
 }
@@ -305,7 +305,7 @@ function highlight_row() {
             rowSelected.style.backgroundColor = "#6fe99a";
             rowSelected.style.border = "thick solid #4456ea";
             table.style.border = "";
-            document.getElementById('resultsTable').style.backgroundColor = '#6fe99a';
+            document.getElementById('subjectSelectorHeading').style.backgroundColor = '#6fe99a';
             rowSelected.className += " selected";
             // Set the subject selected flag to true
             subjectSelected = true;
