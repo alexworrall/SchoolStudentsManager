@@ -107,7 +107,7 @@ function studentChosen(dropDownValue){
     });
 
     // Show the studentID
-    document.getElementById('selectedStudent').style.display = ''
+    document.getElementById('selectedStudent').style.display = 'block';
 }
 
 function validateLecturerDropdown(){
