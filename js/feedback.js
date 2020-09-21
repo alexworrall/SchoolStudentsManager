@@ -234,6 +234,8 @@ function createRow(data) {
     // Create a variable which holds the HTML table which will be built for the students programatically
     var tableBuild = "";
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+    // reset the table
+    tableRef.innerHTML = "";
 
     data.forEach(function(subject){
         tableBuild += '<td data-title = "CRN">'
