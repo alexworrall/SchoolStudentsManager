@@ -86,6 +86,9 @@ function studentChosen(dropDownValue){
     validateStudentDropdown();
     clearFormFields();
 
+    // Show the studentID
+    document.getElementById('selectedStudent').style.display = 'block';
+
     subjectArray = [];
     db.collectionGroup("subjects").where("studentName", "==", dropDownValue)
     .get()
@@ -98,6 +101,7 @@ function studentChosen(dropDownValue){
             // Validate the lecturer dropdown now that it has been changed to something.
             validateLecturerDropdown();
             document.getElementById("studentName").disabled=false;
+            document.getElementById("selectedStudent").innerHTML = doc.data().studentID;
         });
         // Pass the newly filled subject array to the createrow function which will populate the table
         createRow(subjectArray);
@@ -105,9 +109,6 @@ function studentChosen(dropDownValue){
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
-
-    // Show the studentID
-    document.getElementById('selectedStudent').style.display = 'block';
 }
 
 function validateLecturerDropdown(){
