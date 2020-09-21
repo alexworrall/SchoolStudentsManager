@@ -168,6 +168,10 @@ function validateSubjectTable(){
     }
 }
 
+function clearFormFields(){
+    
+}
+
 var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
 
 function validateForm(){
