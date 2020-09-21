@@ -87,7 +87,7 @@ function studentChosen(dropDownValue){
     clearFormFields();
 
     // Show the studentID
-    document.getElementById('selectedStudent').style.display = 'block';
+    document.getElementById('selectedStudentContainer').style.display = 'block';
 
     subjectArray = [];
     db.collectionGroup("subjects").where("studentName", "==", dropDownValue)
