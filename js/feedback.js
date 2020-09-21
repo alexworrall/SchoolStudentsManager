@@ -161,7 +161,7 @@ function validateAttitudeRadio(){
 function validateSubjectTable(){
     if(subjectSelected == false){
         document.getElementById('table').style.border = "thick solid Red";
-        document.getElementById('resultsTable').style.backgroundColor = '#6fe99a';
+        document.getElementById('resultsTable').style.backgroundColor = '#ff9999';
         return false;
     }else{
         return true;
@@ -188,7 +188,7 @@ function validateForm(){
     }else{
         // Submit items to firebase
         // Add a new document with a generated id.
-        /*db.collection("feedback").add({
+        db.collection("feedback").add({
             studentID: "Tokyo",
             studentName: "Japan",
             subjectName: "Japan",
@@ -204,7 +204,7 @@ function validateForm(){
         })
         .catch(function(error) {
             console.error("Error adding document: ", error);
-        });*/
+        });
         return true;
     }
 }
@@ -294,6 +294,8 @@ function highlight_row() {
             var rowSelected = table.getElementsByTagName('tr')[rowId];
             rowSelected.style.backgroundColor = "#6fe99a";
             rowSelected.style.border = "thick solid #4456ea";
+            table.style.border = "";
+            document.getElementById('resultsTable').style.backgroundColor = '#6fe99a';
             rowSelected.className += " selected";
             // Set the subject selected flag to true
             subjectSelected = true;
