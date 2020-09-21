@@ -116,6 +116,7 @@ import Roboto Font ---------------------------- */
   margin-bottom: 2rem;
   background-color: #fff;
   word-break: break-word;
+  border-collapse: collapse;
 }
 .table > thead > tr,
 .table > tbody > tr,
