@@ -106,8 +106,8 @@ function studentChosen(dropDownValue){
         console.log("Error getting documents: ", error);
     });
 
-        // Show the studentID
-        document.getElementById('selectedStudent').style.display = ''
+    // Show the studentID
+    document.getElementById('selectedStudent').style.display = ''
 }
 
 function validateLecturerDropdown(){
