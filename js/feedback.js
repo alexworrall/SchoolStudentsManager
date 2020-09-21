@@ -84,6 +84,7 @@ function lecturerChosen(dropDownValue){
 function studentChosen(dropDownValue){
     // Validate the student drop down now it has been changed
     validateStudentDropdown();
+    clearFormFields();
 
     subjectArray = [];
     db.collectionGroup("subjects").where("studentName", "==", dropDownValue)
@@ -169,7 +170,12 @@ function validateSubjectTable(){
 }
 
 function clearFormFields(){
-    
+    // Clear the table ready for next student
+    document.getElementById('table').style.border = '';
+    // Clear the results table background colour
+    document.getElementById('resultsTable').style.backgroundColor = '';
+    // Nothing is selected anymore, set flag
+    subjectSelected = false;
 }
 
 var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
@@ -193,7 +199,7 @@ function validateForm(){
         // Submit items to firebase
         // Add a new document with a generated id.
         db.collection("feedback").add({
-            studentID: "Tokyo",
+            studentID: "",
             studentName: "Japan",
             subjectName: "Japan",
             dateTime: "Japan",
