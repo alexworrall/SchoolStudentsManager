@@ -12,6 +12,9 @@ var subjectArray = [];
 // variable to hold the status of the table and whether a row is selected or not
 var subjectSelected = false;
 
+// Variable to hold the selected subject from the table
+var subjectSelectedFromTable = "";
+
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
@@ -201,17 +204,17 @@ function validateForm(){
         return false;
     }else{
         // Submit items to firebase
-        // Add a new document with a generated id.
+        // Add a new document with an auto generated id.
         db.collection("feedback").add({
-            studentID: "",
-            studentName: "Japan",
-            subjectName: "Japan",
-            dateTime: "Japan",
-            attitudeRating: "Japan",
-            attitudeComment: "Japan",
-            attendanceRating: "Japan",
-            attendanceComment: "Japan",
-            additionalComments: "Japan"
+            studentID: subjectArray.data().studentID,
+            studentName: subjectArray.data().studentName,
+            subjectName: subjectSelectedFromTable,
+            dateTime: Date().toLocaleString(),
+            attitudeRating: document.querySelector('input[name="radioAttitude"]:checked').value,
+            attitudeComment: document.getElementById("attendanceComments").value,
+            attendanceRating: document.querySelector('input[name="radioAttendance"]:checked').value,
+            attendanceComment: document.getElementById("attitudeComments").value,
+            additionalComments: document.getElementById("registerComments").value
         })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -313,6 +316,8 @@ function highlight_row() {
             rowSelected.className += " selected";
             // Set the subject selected flag to true
             subjectSelected = true;
+            msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
+            msg += '\nThe cell value is: ' + this.innerHTML;
         }
     }
 
