@@ -203,13 +203,14 @@ function validateForm(){
     if (lectValid == false | studentValid == false | subjectValid == false | attendanceValid == false | attitudeValid == false){
         return false;
     }else{
+        var d = new Date();
         // Submit items to firebase
         // Add a new document with an auto generated id.
         db.collection("feedback").add({
-            studentID: subjectArray.data().studentID,
-            studentName: subjectArray.data().studentName,
+            studentID: subjectArray[0].data().studentID,
+            studentName: subjectArray[0].data().studentName,
             subjectName: subjectSelectedFromTable,
-            dateTime: Date().toLocaleString(),
+            dateTime: d.toLocaleString('en-AU'),
             attitudeRating: document.querySelector('input[name="radioAttitude"]:checked').value,
             attitudeComment: document.getElementById("attendanceComments").value,
             attendanceRating: document.querySelector('input[name="radioAttendance"]:checked').value,
@@ -316,8 +317,7 @@ function highlight_row() {
             rowSelected.className += " selected";
             // Set the subject selected flag to true
             subjectSelected = true;
-            msg = 'The ID of the company is: ' + rowSelected.cells[0].innerHTML;
-            msg += '\nThe cell value is: ' + this.innerHTML;
+            subjectSelectedFromTable = rowSelected.cells[1].innerHTML;
         }
     }
 
