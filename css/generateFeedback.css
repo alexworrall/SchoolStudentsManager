@@ -169,6 +169,11 @@
   .form-field:focus, .form-textarea:focus{
     border-color: #0f7ef1;
   }
+
+.submitSuccess{
+  font-weight: bold;
+  margin-top: 50px;
+}
   
 .afterSubmitButton{
     padding: 12px 10px;
