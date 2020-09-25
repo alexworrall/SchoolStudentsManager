@@ -185,7 +185,7 @@ function clearFormFields(){
 
 var submitFeedbackBtn = document.getElementById('submitFeedbackBtn');
 
-function validateForm(){
+validateForm = function(e) {
     // Check lecturer Dropdown
     var lectValid = validateLecturerDropdown();
     // Check student Dropdown
