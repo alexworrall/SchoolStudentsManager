@@ -222,11 +222,11 @@ function validateForm(){
             console.error("Error adding document: ", error);
         });
 
-        document.getElementById("form").innerHTML = `Thank you for submitting Feedback about student:<br>
+        document.getElementById("form").innerHTML = `<div class="submitSuccess">Thank you for submitting Feedback about student:<br>
         StudentID: ` + subjectArray[0].data().studentID +
         `<br>Student Name: ` + subjectArray[0].data().studentName +
         `<br>Your feedback will help to improve outcomes for our VET For School Students.
-        <br><br><button class="afterSubmitButton animation a5" onclick="location.href='../index.html'" type="button">HOME</button>`;
+        <br><br><button class="afterSubmitButton animation a5" onclick="location.href='../index.html'" type="button">HOME</button></div>`;
         return false;
     }
 }
