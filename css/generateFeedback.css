@@ -170,6 +170,18 @@
     border-color: #0f7ef1;
   }
   
+.afterSubmitButton{
+    padding: 12px 10px;
+    border: 0;
+    background: #D40000;
+    border-radius: 3px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
   .form > .button {
     padding: 12px 10px;
     border: 0;
