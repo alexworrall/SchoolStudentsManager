@@ -201,6 +201,7 @@ validateForm = function(e) {
     if (lectValid == false | studentValid == false | subjectValid == false | attendanceValid == false | attitudeValid == false){
         return false;
     }else{
+        e.preventDefault();
         var d = new Date();
         // Submit items to firebase
         // Add a new document with an auto generated id.
