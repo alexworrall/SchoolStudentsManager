@@ -221,7 +221,7 @@ function validateForm(){
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
-        return true;
+        return false;
     }
 }
 
