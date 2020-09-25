@@ -222,7 +222,7 @@ function validateForm(){
             console.error("Error adding document: ", error);
         });
 
-        document.getElementById("mainContainer").innerHTML = `Thank you for submitting Feedback about student:<br>
+        document.getElementById("form").innerHTML = `Thank you for submitting Feedback about student:<br>
         StudentID: ` + subjectArray[0].data().studentID +
         `<br>Student Name: ` + subjectArray[0].data().studentName +
         `<br>Your feedback will help to improve outcomes for our VET For School Students.
