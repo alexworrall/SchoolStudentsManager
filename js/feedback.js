@@ -49,8 +49,6 @@ function lecturerChosen(dropDownValue){
     }
 
     // Populate the drop down box
-    // This does not function as intended yet, I only want to populate this with students that a lecturer has in their subject
-    // not all students but for time saving i will show all students and tweak later.
     var opt = document.createElement('option');
     opt.innerHTML = "Select Student";
     opt.value = "";
