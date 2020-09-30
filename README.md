@@ -12,10 +12,11 @@ School Students Manager is a cloud-enabled, mobile-ready, HTML and javascript po
 # New Features!
 
   - View the coordinators location on a map along with your location if permission is granted
+  - Submitted feedback now gets added to Firestore Cloud
+  - You are able to choose a students subject that you wish to leave feedback about
 
 # Things to be added to the application
 
-  - Submitting feedback does not yet add it to firebase
   - Directions to the coordinators from your current location
   - More detailed filtering of students based on chosen lecturer in feedback dropdown
   - Be able to choose a coordinator without choosing a student first
