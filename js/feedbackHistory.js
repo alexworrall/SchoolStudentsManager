@@ -38,17 +38,10 @@ var subjects = db.collectionGroup('feedback');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         // Add the feedback item to the table
-        lecturerArray.push(doc.data().lecturer);
+        //lecturerArray.push(doc.data().lecturer);
+        createRow(doc.data());
     });
     
-    // Populate the drop down box
-    lecturerArray.forEach(function(item, array) {
-        // Add those lecturers to the drop down box
-        var opt = document.createElement('option');
-        opt.innerHTML = item;
-        opt.value = item;
-        sel.appendChild(opt);
-    })
 });
 
 // Function to build the table with information from the JSON information gathered before.
