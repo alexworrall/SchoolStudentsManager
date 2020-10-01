@@ -52,24 +52,24 @@ function createRow(data) {
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
     //data.forEach(function(subject){
-        tableBuild += '<p class="studentHeading">Feedback for student: ' + subject.studentName + '</p><td data-title = "ID"><br>'
-        + subject.studentID
+        tableBuild += '<p class="studentHeading">Feedback for student: ' + data.studentName + '</p><td data-title = "ID"><br>'
+        + data.studentID
         + '</td><td data-title = "Name"><br>'
-        + subject.studentName
+        + data.studentName
         + '</td><td data-title = "Date"><br>'
-        + subject.dateTime
+        + data.dateTime
         + '</td><td data-title = "Subject"><br>'
-        + subject.subjectName
+        + data.subjectName
         + '</td><td data-title = "Attendance"><br>'
-        + subject.attendanceRating
+        + data.attendanceRating
         + '</td><td data-title = "Attendance Comment"><br>'
-        + subject.attendanceComment
+        + data.attendanceComment
         + '</td><td data-title = "Attitude"><br>'
-        + subject.attitudeRating
+        + data.attitudeRating
         + '</td><td data-title = "Attitude Comment"><br>'
-        + subject.attitudeComment
+        + data.attitudeComment
         + '</td><td data-title = "Additional Comment"><br>'
-        + subject.additionalComments
+        + data.additionalComments
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
