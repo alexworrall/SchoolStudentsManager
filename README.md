@@ -20,6 +20,7 @@ School Students Manager is a cloud-enabled, mobile-ready, HTML and javascript po
   - Directions to the coordinators from your current location
   - More detailed filtering of students based on chosen lecturer in feedback dropdown
   - Be able to choose a coordinator without choosing a student first
+  - Fully migrate from Realtime database to Cloud Firestore
 
 # External libraries and technologies
 
