@@ -105,15 +105,15 @@ function createRow(data) {
 
     data.forEach(function(subject){
         tableBuild += '<td data-title = "ID">'
-        + subject.studentID
+        + subject.data().studentID
         + '</td><td data-title = "CRN">'
-        + subject.CRN
+        + subject.data().CRN
         + '</td><td data-title = "Name">'
-        + subject.studentName
+        + subject.data().studentName
         + '</td><td data-title = "Subject">'
-        + subject.shortName
+        + subject.data().shortName
         + '</td><td data-title = "Timing">'
-        + subject.term
+        + subject.data().term
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
