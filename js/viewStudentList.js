@@ -48,7 +48,7 @@ function lecturerChosen(dropDownValue){
 
 
     // Create an array to hold the students found and their subjects for the lecturer chosen
-    var studentsArray = [];
+    /* var studentsArray = [];
 
     // Loop through the registrations and grab the subjects enrolled.
     Object.keys(jsonData).forEach(function(key) {
@@ -66,8 +66,24 @@ function lecturerChosen(dropDownValue){
                 studentsArray.push(subjectValue);
             }
         });
-    });
+    }); */
 
+    var studentsArray = [];
+    db.collectionGroup("subjects").where("lecturer", "==", dropDownValue)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            //console.log(doc.id, " => ", doc.data(), doc.data().studentName);
+            if (!studentsArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
+                // Not duplicate, add to array.
+                studentsArray.push(doc.data());
+            }
+        });
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
     
     var tb = document.querySelector('#table tbody');
 
