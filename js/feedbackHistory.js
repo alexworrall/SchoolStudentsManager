@@ -51,7 +51,7 @@ function createRow(data) {
     var tableBuild = "";
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
-    data.forEach(function(subject){
+    //data.forEach(function(subject){
         tableBuild += '<p class="studentHeading">Feedback for student: ' + subject.studentName + '</p><td data-title = "ID"><br>'
         + subject.studentID
         + '</td><td data-title = "Name"><br>'
@@ -75,5 +75,5 @@ function createRow(data) {
         var newRow = tableRef.insertRow(-1);
         newRow.innerHTML = tableBuild;
         tableBuild = "";
-    });
+   // });
 }
