@@ -46,28 +46,6 @@ function lecturerChosen(dropDownValue){
     var headingHide = document.querySelector('.hideHeading');
     headingHide.style.display = 'none';
 
-
-    // Create an array to hold the students found and their subjects for the lecturer chosen
-    /* var studentsArray = [];
-
-    // Loop through the registrations and grab the subjects enrolled.
-    Object.keys(jsonData).forEach(function(key) {
-        var value = jsonData[key];
-        // Loop through the subjects and search for the lecturers
-        Object.keys(value).forEach(function(key) {
-            var subjectValue = value[key];
-            //Only add the student and their subjects IF the lecturer shows in their subject list as a lecturer
-            if (subjectValue['lecturer'] == dropDownValue){
-                // Add the students ID to the JSON object
-                subjectValue.studentID = value.studentID;
-                // Add the students Name to the JSON object
-                subjectValue.studentName = value.studentName;
-                // The lecturer has the student in their class so add them to the array
-                studentsArray.push(subjectValue);
-            }
-        });
-    }); */
-
     var studentsArray = [];
     db.collectionGroup("subjects").where("lecturer", "==", dropDownValue)
     .get()
@@ -78,6 +56,7 @@ function lecturerChosen(dropDownValue){
             if (!studentsArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
                 // Not duplicate, add to array.
                 studentsArray.push(doc.data());
+                createRow(doc.data());
             }
         });
     })
@@ -92,7 +71,7 @@ function lecturerChosen(dropDownValue){
         tb.removeChild(tb.childNodes[0]);
     }
 
-    createRow(studentsArray);
+    //createRow(studentsArray);
 
 }
 
@@ -103,21 +82,21 @@ function createRow(data) {
     var tableBuild = "";
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
-    data.forEach(function(subject){
+    //data.forEach(function(subject){
         tableBuild += '<td data-title = "ID">'
-        + subject.data().studentID
+        + data.studentID
         + '</td><td data-title = "CRN">'
-        + subject.data().CRN
+        + data.CRN
         + '</td><td data-title = "Name">'
-        + subject.data().studentName
+        + data.studentName
         + '</td><td data-title = "Subject">'
-        + subject.data().shortName
+        + data.shortName
         + '</td><td data-title = "Timing">'
-        + subject.data().term
+        + data.term
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
         newRow.innerHTML = tableBuild;
         tableBuild = "";
-    });
+    //});
 }
