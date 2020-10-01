@@ -1,4 +1,4 @@
-// Create empty variable for the JSON data to be used later to reduce down the API calls.
+/* // Create empty variable for the JSON data to be used later to reduce down the API calls.
 var jsonData = [];
 
 // Get the JSON from Firebase using the URL
@@ -26,7 +26,30 @@ fetch(url)
         });
 
         createRow(feedbackArray);
+    }); */
+
+// Create empty variable for the JSON data to be used later to reduce down the API calls.
+var jsonData;
+
+var db = firebase.firestore();
+
+//Gather the lecturers details from the enrolled subjects to populate the dropdown
+var subjects = db.collectionGroup('feedback');
+subjects.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        // Add the feedback item to the table
+        lecturerArray.push(doc.data().lecturer);
     });
+    
+    // Populate the drop down box
+    lecturerArray.forEach(function(item, array) {
+        // Add those lecturers to the drop down box
+        var opt = document.createElement('option');
+        opt.innerHTML = item;
+        opt.value = item;
+        sel.appendChild(opt);
+    })
+});
 
 // Function to build the table with information from the JSON information gathered before.
 // Code sourced from the HIT238 resources from Matt Elvey and customised.
