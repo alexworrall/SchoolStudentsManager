@@ -39,10 +39,10 @@ var db = firebase.firestore();
 var subjects = db.collectionGroup('feedback');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-        // Add the feedback item to the table
-        //lecturerArray.push(doc.data().lecturer);
         createRow(doc.data());
-        lecturerArray.push(doc.data());
+        if (!lecturerArray.includes(doc.data().generatedBy) && doc.data().generatedBy != undefined){
+            lecturerArray.push(doc.data().generatedBy);
+        }
     });
     
 });
