@@ -45,7 +45,7 @@ for(i = L; i >= 0; i--) {
 
 // Populate the drop down box
 var opt = document.createElement('option');
-opt.innerHTML = "Select Student";
+opt.innerHTML = "Select Lecturer";
 opt.value = "";
 sel.appendChild(opt);
 
