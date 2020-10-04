@@ -77,7 +77,7 @@ function filterFeedback(dropDownValue){
     tableRef.innerHTML = "";
 
     // If the drop down is set to no filter then return all lecturers like the default.
-    if(dropDownValue == "No Filter"){
+    if(dropDownValue == ""){
         //Gather the lecturers details from the enrolled subjects to populate the dropdown
         var subjects = db.collectionGroup('feedback');
         subjects.get().then(function (querySnapshot) {
