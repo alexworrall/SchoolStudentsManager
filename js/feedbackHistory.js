@@ -35,6 +35,20 @@ var lecturerArray = [];
 
 var db = firebase.firestore();
 
+var sel = document.getElementById('lecturerName');
+        
+//Remove existing elements in the drop down box to prevent it appending to the end and having a long list
+var i, L = sel.options.length - 1;
+for(i = L; i >= 0; i--) {
+    sel.remove(i);
+}
+
+// Populate the drop down box
+var opt = document.createElement('option');
+opt.innerHTML = "Select Student";
+opt.value = "";
+sel.appendChild(opt);
+
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('feedback');
 subjects.get().then(function (querySnapshot) {
@@ -44,6 +58,10 @@ subjects.get().then(function (querySnapshot) {
         // Add the lecturer names to the array to populate the dropdown if they aren't in there already.
         if (!lecturerArray.includes(doc.data().generatedBy) && doc.data().generatedBy != undefined){
             lecturerArray.push(doc.data().generatedBy);
+            opt = document.createElement('option');
+            opt.innerHTML = doc.data().generatedBy;
+            opt.value = doc.data().generatedBy;
+            sel.appendChild(opt);
         }
     }); 
 });
