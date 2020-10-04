@@ -45,7 +45,7 @@ for(i = L; i >= 0; i--) {
 
 // Populate the drop down box
 var opt = document.createElement('option');
-opt.innerHTML = "Select Lecturer";
+opt.innerHTML = "No Filter";
 opt.value = "";
 sel.appendChild(opt);
 
@@ -76,7 +76,11 @@ function filterFeedback(dropDownValue){
     // Clear table
     tableRef.innerHTML = "";
 
-    db.collectionGroup("feedback").where("generatedBy", "==", dropDownValue)
+    // If the drop down is set to no filter then return all lecturers like the default.
+    if(dropDownValue == "No Filter"){
+
+    }else{
+        db.collectionGroup("feedback").where("generatedBy", "==", dropDownValue)
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -87,6 +91,8 @@ function filterFeedback(dropDownValue){
     .catch(function(error) {
         console.log("Error getting documents: ", error);
     });
+
+    }
 }
 
 // Function to build the table with information from the JSON information gathered before.
