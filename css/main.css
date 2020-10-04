@@ -444,6 +444,10 @@ nav a:hover {
     margin-bottom: 20px;
 }
 
+.highlightInfo{
+    color: #6fe99a;
+}
+
 /* Keyframes for animations, included some for legacy browsers just in case */
 @keyframes mainMenuEntrance{
     from{
