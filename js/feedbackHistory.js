@@ -47,6 +47,36 @@ subjects.get().then(function (querySnapshot) {
     
 });
 
+function filterFeedback(dropDownValue){
+    // Validate the student drop down now it has been changed
+    validateStudentDropdown();
+    clearFormFields();
+
+    // Show the studentID
+    document.getElementById('selectedStudentContainer').style.display = 'block';
+
+    subjectArray = [];
+    db.collectionGroup("subjects").where("studentName", "==", dropDownValue)
+    .get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // Not duplicate, add to array.
+            subjectArray.push(doc);
+            // Add those students to the drop down box
+
+            // Validate the lecturer dropdown now that it has been changed to something.
+            validateLecturerDropdown();
+            document.getElementById("studentName").disabled=false;
+            document.getElementById("selectedStudent").innerHTML = doc.data().studentID;
+        });
+        // Pass the newly filled subject array to the createrow function which will populate the table
+        createRow(subjectArray);
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+}
+
 // Function to build the table with information from the JSON information gathered before.
 // Code sourced from the HIT238 resources from Matt Elvey and customised.
 function createRow(data) {
