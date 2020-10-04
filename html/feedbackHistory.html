@@ -60,7 +60,14 @@
                             </div>-->
 
                             <div id="lecturerFilterDiv" class="animation a5 dropDown">
-
+                              <label class="formLabel" for="lecturerName">Filter By: </label>
+                                    <select class="form-select" id="lecturerName" onchange="filterFeedback(this.value);" required>
+                                        <option selected value="">Select Lecturer</option>
+                                        <!-- Don't need the lecturers hard coded as this will be gathered using REST and populated at runtime.
+                                        <option value="Participant">Michelle Paelchen</option>
+                                        <option value="Business">Stephen Learey</option>
+                                        <option value="Visitor">Frank Lynch</option>-->
+                                    </select>
                             </div>
 
                             <div id="resultsTable">
