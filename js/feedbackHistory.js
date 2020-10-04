@@ -71,6 +71,11 @@ subjects.get().then(function (querySnapshot) {
 // This function will use the value from the dropdown to filter the results shown and only have that lecturer.
 function filterFeedback(dropDownValue){
 
+    var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
+
+    // Clear table
+    tableRef.innerHTML = "";
+
     db.collectionGroup("feedback").where("generatedBy", "==", dropDownValue)
     .get()
     .then(function(querySnapshot) {
