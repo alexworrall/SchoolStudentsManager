@@ -39,13 +39,16 @@ var db = firebase.firestore();
 var subjects = db.collectionGroup('feedback');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
+        // Create the table with all the feedback previously generated.
         createRow(doc.data());
+        // Add the lecturer names to the array to populate the dropdown if they aren't in there already.
         if (!lecturerArray.includes(doc.data().generatedBy) && doc.data().generatedBy != undefined){
             lecturerArray.push(doc.data().generatedBy);
         }
-    });
-    
+    }); 
 });
+
+
 
 // This function will use the value from the dropdown to filter the results shown and only have that lecturer.
 function filterFeedback(dropDownValue){
