@@ -440,6 +440,10 @@ nav a:hover {
     animation-fill-mode: forwards;
 }
 
+#lecturerFilterDiv{
+    margin-bottom: 20px;
+}
+
 /* Keyframes for animations, included some for legacy browsers just in case */
 @keyframes mainMenuEntrance{
     from{
