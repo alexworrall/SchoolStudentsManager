@@ -78,7 +78,14 @@ function filterFeedback(dropDownValue){
 
     // If the drop down is set to no filter then return all lecturers like the default.
     if(dropDownValue == "No Filter"){
-
+        //Gather the lecturers details from the enrolled subjects to populate the dropdown
+        var subjects = db.collectionGroup('feedback');
+        subjects.get().then(function (querySnapshot) {
+            querySnapshot.forEach(function (doc) {
+                // Create the table with all the feedback previously generated.
+                createRow(doc.data());
+            }); 
+        });
     }else{
         db.collectionGroup("feedback").where("generatedBy", "==", dropDownValue)
     .get()
