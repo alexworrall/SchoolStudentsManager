@@ -50,8 +50,9 @@ opt.value = "";
 sel.appendChild(opt);
 
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
-var subjects = db.collectionGroup('feedback');
-subjects.get().then(function (querySnapshot) {
+db.collectionGroup('feedback')
+.orderBy('dateTime', 'desc')
+.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         // Create the table with all the feedback previously generated.
         createRow(doc.data());
@@ -79,7 +80,8 @@ function filterFeedback(dropDownValue){
     // If the drop down is set to no filter then return all lecturers like the default.
     if(dropDownValue == ""){
         //Gather the lecturers details from the enrolled subjects to populate the dropdown
-        var subjects = db.collectionGroup('feedback');
+        var subjects = db.collectionGroup('feedback')
+        .orderBy('dateTime', 'desc');
         subjects.get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 // Create the table with all the feedback previously generated.
