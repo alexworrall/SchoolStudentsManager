@@ -208,6 +208,7 @@ function validateForm(){
             studentID: subjectArray[0].data().studentID,
             studentName: subjectArray[0].data().studentName,
             subjectName: subjectSelectedFromTable,
+            generatedBy: document.getElementById('lecturerName').value,
             dateTime: d.toLocaleString('en-AU'),
             attitudeRating: document.querySelector('input[name="radioAttitude"]:checked').value,
             attitudeComment: document.getElementById("attendanceComments").value,
