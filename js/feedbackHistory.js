@@ -88,6 +88,7 @@ function filterFeedback(dropDownValue){
         });
     }else{
         db.collectionGroup("feedback").where("generatedBy", "==", dropDownValue)
+        .orderBy('dateTime', 'desc')
     .get()
     .then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
