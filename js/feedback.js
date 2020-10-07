@@ -209,7 +209,7 @@ function validateForm(){
             studentName: subjectArray[0].data().studentName,
             subjectName: subjectSelectedFromTable,
             generatedBy: document.getElementById('lecturerName').value,
-            dateTime: d.toLocaleString('en-AU'),
+            dateTime: firebase.firestore.Timestamp.fromDate(new Date()),
             attitudeRating: document.querySelector('input[name="radioAttitude"]:checked').value,
             attitudeComment: document.getElementById("attendanceComments").value,
             attendanceRating: document.querySelector('input[name="radioAttendance"]:checked').value,
