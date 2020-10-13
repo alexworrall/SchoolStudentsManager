@@ -20,9 +20,9 @@ var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
-        if (!studentArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
+        if (!studentArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
             // Not duplicate, add to array.
-            studentArray.push(doc.data().lecturer);
+            studentArray.push(doc.data().studentName);
         }
     });
     
