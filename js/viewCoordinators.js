@@ -52,6 +52,9 @@ function studentChosen(dropDownValue){
     var headingHide = document.querySelector('.hideHeading');
     headingHide.style.display = 'none';
 
+    // get access to the table body
+    var tb = document.querySelector('#table tbody');
+
     // Search for the students name to find the school details about the student from our object array.
     let studentObj = studentInfoArray.find(o => o.name === dropDownValue);
     var schoolDetails;
