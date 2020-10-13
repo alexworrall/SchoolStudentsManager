@@ -17,7 +17,7 @@ var subjectSelected = false;
 var subjectSelectedFromTable = "";
 
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
-var subjects = db.collectionGroup('subjects');
+var subjects = db.collectionGroup('students');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
