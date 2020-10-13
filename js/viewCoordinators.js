@@ -21,9 +21,9 @@ var subjects = db.collectionGroup('students');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
-        if (!studentArray.includes(doc.data().studentName) && doc.data().studentName != undefined){
+        if (!studentArray.includes(doc.data().name) && doc.data().name != undefined){
             // Not duplicate, add to array.
-            studentArray.push(doc.data().studentName);
+            studentArray.push(doc.data().name);
         }
         studentInfo = {
           name: doc.data().studentName,
