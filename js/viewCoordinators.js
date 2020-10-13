@@ -5,7 +5,7 @@ var db = firebase.firestore();
 // Grab the lecturer information from the JSON and show in the dropdown box.
 //var list = data['Episodes'];
 var sel = document.getElementById('lecturerName');
-var lecturerArray = [];
+var studentArray = [];
 // Array to hold all the subjects for the chosen student
 var subjectArray = [];
 
@@ -20,14 +20,14 @@ var subjects = db.collectionGroup('subjects');
 subjects.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
-        if (!lecturerArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
+        if (!studentArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
             // Not duplicate, add to array.
-            lecturerArray.push(doc.data().lecturer);
+            studentArray.push(doc.data().lecturer);
         }
     });
     
     // Populate the drop down box
-    lecturerArray.forEach(function(item, array) {
+    studentArray.forEach(function(item, array) {
         // Add those lecturers to the drop down box
         var opt = document.createElement('option');
         opt.innerHTML = item;
