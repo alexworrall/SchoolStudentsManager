@@ -59,7 +59,7 @@ function studentChosen(dropDownValue){
 
     docRef.get().then(function(doc) {
         if (doc.exists) {
-
+          schoolDetails = doc.data();
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
