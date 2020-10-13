@@ -63,6 +63,84 @@ function studentChosen(dropDownValue){
     docRef.get().then(function(doc) {
         if (doc.exists) {
           schoolDetails = doc.data();
+
+          // while tb has children, remove the first one
+      while (tb.childNodes.length) {
+        tb.removeChild(tb.childNodes[0]);
+    }
+
+    // Pass the object through to the function to add it to the HTML table
+    createRow(schoolDetails);
+
+    // Make the map visible and add in the address for the school
+    "use strict";
+
+    var school = {lat: parseFloat(schoolDetails.lat), lng: parseFloat(schoolDetails.lng)};
+    // The map, centered at Uluru
+    var map = new google.maps.Map(
+        document.getElementById('coordMap'), {zoom: 12, center: school});
+    // The marker, positioned at Uluru
+    var marker = new google.maps.Marker({position: school, map: map});
+
+    var infoWindow = new google.maps.InfoWindow;
+
+    var markers = [];
+    markers.push(marker);
+    
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          
+          // Add a marker for the user and make it blue to stand out
+          var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
+          meMarker.info = new google.maps.InfoWindow({
+            content: 'You are here'
+          });
+
+          meMarker.info.open(map, meMarker);
+          
+          // Listener for the users map icon
+          google.maps.event.addListener(meMarker, 'click', function() {
+            meMarker.info.open(map, meMarker);
+          });
+
+          // Add the users marker to the marker array for use in the bounds later
+          markers.push(meMarker);
+
+          // Loop through all markers and extend the map bounds to fit the markers
+          var bounds = new google.maps.LatLngBounds();
+          for (var i = 0; i < markers.length; i++) {
+              bounds.extend(markers[i].getPosition());
+          }
+
+          // Make the map fit the bounds we just gathered
+          map.fitBounds(bounds);
+
+        }, function() {
+          handleLocationError(true, infoWindow, map.getCenter());
+        });
+      } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+      }
+    
+    // Style the map container to show the map at the right size 
+    var mapOuter = document.querySelector('.mapContainer');
+    mapOuter.style.visibility = "visible";
+    mapOuter.style.height = "350px";
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                            'Error: The Geolocation service failed.' :
+                            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -71,82 +149,6 @@ function studentChosen(dropDownValue){
         console.log("Error getting document:", error);
     });
 
-      // while tb has children, remove the first one
-      while (tb.childNodes.length) {
-          tb.removeChild(tb.childNodes[0]);
-      }
-
-      // Pass the object through to the function to add it to the HTML table
-      createRow(schoolDetails);
-
-      // Make the map visible and add in the address for the school
-      "use strict";
-
-      var school = {lat: parseFloat(schoolDetails.lat), lng: parseFloat(schoolDetails.lng)};
-      // The map, centered at Uluru
-      var map = new google.maps.Map(
-          document.getElementById('coordMap'), {zoom: 12, center: school});
-      // The marker, positioned at Uluru
-      var marker = new google.maps.Marker({position: school, map: map});
-
-      var infoWindow = new google.maps.InfoWindow;
-
-      var markers = [];
-      markers.push(marker);
-      
-      // Try HTML5 geolocation.
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            
-            // Add a marker for the user and make it blue to stand out
-            var meMarker = new google.maps.Marker({position: pos, map: map, clickable: true, icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'});
-            meMarker.info = new google.maps.InfoWindow({
-              content: 'You are here'
-            });
-
-            meMarker.info.open(map, meMarker);
-            
-            // Listener for the users map icon
-            google.maps.event.addListener(meMarker, 'click', function() {
-              meMarker.info.open(map, meMarker);
-            });
-
-            // Add the users marker to the marker array for use in the bounds later
-            markers.push(meMarker);
-
-            // Loop through all markers and extend the map bounds to fit the markers
-            var bounds = new google.maps.LatLngBounds();
-            for (var i = 0; i < markers.length; i++) {
-                bounds.extend(markers[i].getPosition());
-            }
-
-            // Make the map fit the bounds we just gathered
-            map.fitBounds(bounds);
-
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      
-      // Style the map container to show the map at the right size 
-      var mapOuter = document.querySelector('.mapContainer');
-      mapOuter.style.visibility = "visible";
-      mapOuter.style.height = "350px";
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-          infoWindow.setPosition(pos);
-          infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-          infoWindow.open(map);
-      }
 }
 
 // Function to build the table with information from the JSON information gathered before.
