@@ -8,6 +8,7 @@ var sel = document.getElementById('studentName');
 var studentArray = [];
 // Array to hold all the subjects for the chosen student
 var subjectArray = [];
+var studentInfoArray = [];
 
 // variable to hold the status of the table and whether a row is selected or not
 var subjectSelected = false;
@@ -24,6 +25,8 @@ subjects.get().then(function (querySnapshot) {
             // Not duplicate, add to array.
             studentArray.push(doc.data().studentName);
         }
+
+
     });
     
     // Populate the drop down box
