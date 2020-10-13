@@ -52,24 +52,6 @@ function studentChosen(dropDownValue){
     var headingHide = document.querySelector('.hideHeading');
     headingHide.style.display = 'none';
 
-    // Get the JSON from Firebase using the URL
-    var url = 'https://schoolstudentmanager.firebaseio.com/school.json';
-    // Get the information from the firebase rest service in JSON
-    fetch(url)
-    .then(function(data) {
-        return data.json();
-    })
-    .then(function(data) {
-        // Look at the school and grab the coordinators details based on the student chosen from above in the student dropdown.
-        var tb = document.querySelector('#table tbody');
-
-        // Search for the students name to find the school details about the student from our object array.
-        let studentObj = studentInfoArray.find(o => o.name === dropDownValue);
-
-        // Get the index that the object is at which matches the students school
-        let schoolIndex = Object.keys(data).findIndex(o => o === studentObj.school);
-        // Retrieve the school information using the index that we retrieved
-        var schoolDetails = Object.values(data)[schoolIndex];
 
         // while tb has children, remove the first one
         while (tb.childNodes.length) {
@@ -139,7 +121,6 @@ function studentChosen(dropDownValue){
         var mapOuter = document.querySelector('.mapContainer');
         mapOuter.style.visibility = "visible";
         mapOuter.style.height = "350px";
-    });
 
         function handleLocationError(browserHasGeolocation, infoWindow, pos) {
             infoWindow.setPosition(pos);
