@@ -54,12 +54,12 @@ function studentChosen(dropDownValue){
 
     // Search for the students name to find the school details about the student from our object array.
     let studentObj = studentInfoArray.find(o => o.name === dropDownValue);
-
+    var schoolDetails;
     var docRef = db.collection("school").doc(studentObj.school);
 
     docRef.get().then(function(doc) {
         if (doc.exists) {
-            console.log("Document data:", doc.data());
+
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
