@@ -1,59 +1,40 @@
-// Create empty variable for the JSON data to be used later to reduce down the API calls.
-var jsonData = [];
-// Create an object variable to hold the relevant student information that we need. Name and school.
-var studentInfo;
-var studentInfoArray = [];
+/// Create empty variable for the JSON data to be used later to reduce down the API calls.
+var jsonData;
 
-// Get the JSON from Firebase using the URL
-var url = 'https://schoolstudentmanager.firebaseio.com/students.json';
-// Get the information from the firebase rest service in JSON
-fetch(url)
-    .then(function(data) {
-        return data.json();
-    })
-    .then(function(data) {
-        // Grab the student information from the JSON and show in the dropdown box.
-        var sel = document.getElementById('studentName');
-        var studentArray = [];
-        jsonData = data;
+var db = firebase.firestore();
+// Grab the lecturer information from the JSON and show in the dropdown box.
+//var list = data['Episodes'];
+var sel = document.getElementById('lecturerName');
+var lecturerArray = [];
+// Array to hold all the subjects for the chosen student
+var subjectArray = [];
 
-        // Create an array of the students details.
-        /*var keys = Object.keys(data);
-        var studentsArray = keys.map(function(key1) {
-            // Add the keys (studentID) to the students Array
-            return key1;
-          })*/
+// variable to hold the status of the table and whether a row is selected or not
+var subjectSelected = false;
 
-        // Loop through the students and grab the students details.
-        Object.keys(data).forEach(function(key) {
-            var value = data[key];
-            // Loop through the subjects and gather the students.
-            Object.keys(value).forEach(function(key) {
-                var studentValue = value[key];
-                //Only add the student to the list IF it is unique to the array. Stops duplicates in the drop down.
-                if (!studentArray.includes(studentValue['name']) && studentValue['name'] != undefined){
-                    // Not duplicate, add to array.
-                    studentArray.push(studentValue['name']);
-                    // Add the bits we need to the student object
-                    studentInfo = {
-                        name: studentValue['name'],
-                        school: studentValue['school'],
-                      };
-                      // Add the student name and school object into an array for processing later.
-                    studentInfoArray.push(studentInfo);
-                }
-            });
-        });
+// Variable to hold the selected subject from the table
+var subjectSelectedFromTable = "";
 
-        // Populate the drop down box
-        studentArray.forEach(function(item) {
-            // Add those students to the drop down box
-            var opt = document.createElement('option');
-            opt.innerHTML = item;
-            opt.value = item;
-            sel.appendChild(opt);
-        });
+//Gather the lecturers details from the enrolled subjects to populate the dropdown
+var subjects = db.collectionGroup('subjects');
+subjects.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+        //console.log(doc.id, ' => ', doc.data());
+        if (!lecturerArray.includes(doc.data().lecturer) && doc.data().lecturer != undefined){
+            // Not duplicate, add to array.
+            lecturerArray.push(doc.data().lecturer);
+        }
     });
+    
+    // Populate the drop down box
+    lecturerArray.forEach(function(item, array) {
+        // Add those lecturers to the drop down box
+        var opt = document.createElement('option');
+        opt.innerHTML = item;
+        opt.value = item;
+        sel.appendChild(opt);
+    })
+});
 
 function studentChosen(dropDownValue){
 
