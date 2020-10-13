@@ -25,7 +25,12 @@ subjects.get().then(function (querySnapshot) {
             // Not duplicate, add to array.
             studentArray.push(doc.data().studentName);
         }
-
+        studentInfo = {
+          name: studentValue['name'],
+          school: studentValue['school'],
+        };
+        // Add the student name and school object into an array for processing later.
+      studentInfoArray.push(studentInfo);
 
     });
     
