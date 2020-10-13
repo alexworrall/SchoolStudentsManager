@@ -4,7 +4,7 @@ var jsonData;
 var db = firebase.firestore();
 // Grab the lecturer information from the JSON and show in the dropdown box.
 //var list = data['Episodes'];
-var sel = document.getElementById('lecturerName');
+var sel = document.getElementById('studentName');
 var studentArray = [];
 // Array to hold all the subjects for the chosen student
 var subjectArray = [];
