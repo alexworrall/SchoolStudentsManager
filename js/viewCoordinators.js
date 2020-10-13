@@ -26,7 +26,7 @@ subjects.get().then(function (querySnapshot) {
             studentArray.push(doc.data().name);
         }
         studentInfo = {
-          name: doc.data().studentName,
+          name: doc.data().name,
           school: doc.data().school,
         };
         // Add the student name and school object into an array for processing later.
