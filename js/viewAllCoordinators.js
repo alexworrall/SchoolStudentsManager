@@ -35,7 +35,7 @@ function createRow(schoolData) {
         + '</td><td data-title = "Email">'
         + '<a href="mailto:' + schoolData.coordEmail + '?subject=TAFE SA Vet For School Student Enquiry">' + schoolData.coordEmail + '</a>'
         + '</td><td data-title = "Address">'
-        + schoolData.coordAddress
+        + '<a href="https://www.google.com/maps/search/?api=1&query=' + schoolData.lat + ',' + schoolData.lng + '>' + schoolData.coordAddress + '</a>'
         + '</td>';
 
         var newRow = tableRef.insertRow(-1);
@@ -43,5 +43,5 @@ function createRow(schoolData) {
         tableBuild = "";
 }
 
-//
-//<a href="https://www.google.com/maps/@LATITUDE,LONGITUDE,ZOOMNUMBERz?hl=LANGUAGE">Visit W3Schools.com!</a>
+//https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa
+//https://www.google.com/maps/dir/?api=1&origin=Space+Needle+Seattle+WA&destination=Pike+Place+Market+Seattle+WA&travelmode=bicycling
