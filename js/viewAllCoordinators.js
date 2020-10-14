@@ -33,7 +33,7 @@ function createRow(schoolData) {
         + '</td><td data-title = "Phone">'
         + schoolData.coordPhone
         + '</td><td data-title = "Email">'
-        + schoolData.coordEmail
+        + '<a href="mailto:' + schoolData.coordEmail + '?subject=TAFE SA Vet For School Student Enquiry">' + schoolData.coordEmail + '</a>'
         + '</td><td data-title = "Address">'
         + schoolData.coordAddress
         + '</td>';
