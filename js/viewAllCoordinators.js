@@ -8,14 +8,6 @@ coordinators.get().then(function (querySnapshot) {
         createRow(doc.data());
     });
     
-    // Populate the drop down box
-    studentArray.forEach(function(item, array) {
-        // Add those lecturers to the drop down box
-        var opt = document.createElement('option');
-        opt.innerHTML = item;
-        opt.value = item;
-        sel.appendChild(opt);
-    })
 });
 
 
