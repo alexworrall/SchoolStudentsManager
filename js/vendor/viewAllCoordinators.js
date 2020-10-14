@@ -1,20 +1,4 @@
-/// Create empty variable for the JSON data to be used later to reduce down the API calls.
-var jsonData;
-
 var db = firebase.firestore();
-// Grab the lecturer information from the JSON and show in the dropdown box.
-//var list = data['Episodes'];
-var sel = document.getElementById('studentName');
-var studentArray = [];
-// Array to hold all the subjects for the chosen student
-var subjectArray = [];
-var studentInfoArray = [];
-
-// variable to hold the status of the table and whether a row is selected or not
-var subjectSelected = false;
-
-// Variable to hold the selected subject from the table
-var subjectSelectedFromTable = "";
 
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
 var subjects = db.collectionGroup('students');
