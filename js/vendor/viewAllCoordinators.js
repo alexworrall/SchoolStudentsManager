@@ -5,8 +5,7 @@ var coordinators = db.collectionGroup('school');
 coordinators.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
-        
-
+        createRow(doc.data());
     });
     
     // Populate the drop down box
