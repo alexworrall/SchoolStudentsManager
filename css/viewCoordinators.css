@@ -13,7 +13,14 @@
 * { box-sizing:border-box; }
 
 /* basic stylings ------------------------------------------ */
-  
+
+.thickLine{
+  width: 100%;
+  height: 10px;
+  border-color: black;
+  background-color: black;
+}
+
 #coordMap {
   height: 100%;
 }
