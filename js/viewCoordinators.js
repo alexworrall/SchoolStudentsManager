@@ -163,7 +163,7 @@ function createRow(schoolData) {
         + '</td><td data-title = "School">'
         + schoolData.title
         + '</td><td data-title = "Phone">'
-        + schoolData.coordPhone
+        + '<a href="tel:' + schoolData.coordPhone + '">' + schoolData.coordPhone + '</a>'
         + '</td><td data-title = "Email">'
         + schoolData.coordEmail
         + '</td><td data-title = "Address">'
