@@ -26,7 +26,7 @@ function createRow(schoolData) {
     var tableBuild = "";
     var tableRef = document.getElementById('table').getElementsByTagName('tbody')[0];
 
-        tableBuild = '<td data-title = "Name">'
+        tableBuild += '<td data-title = "Name">'
         + schoolData.coordName
         + '</td><td data-title = "School">'
         + schoolData.title
