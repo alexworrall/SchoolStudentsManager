@@ -5,16 +5,7 @@ var coordinators = db.collectionGroup('school');
 coordinators.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
-        if (!studentArray.includes(doc.data().name) && doc.data().name != undefined){
-            // Not duplicate, add to array.
-            studentArray.push(doc.data().name);
-        }
-        studentInfo = {
-          name: doc.data().name,
-          school: doc.data().school,
-        };
-        // Add the student name and school object into an array for processing later.
-      studentInfoArray.push(studentInfo);
+        
 
     });
     
