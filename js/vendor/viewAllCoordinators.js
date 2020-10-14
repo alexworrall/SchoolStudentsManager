@@ -1,8 +1,8 @@
 var db = firebase.firestore();
 
 //Gather the lecturers details from the enrolled subjects to populate the dropdown
-var subjects = db.collectionGroup('school');
-subjects.get().then(function (querySnapshot) {
+var coordinators = db.collectionGroup('school');
+coordinators.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
         //console.log(doc.id, ' => ', doc.data());
         if (!studentArray.includes(doc.data().name) && doc.data().name != undefined){
