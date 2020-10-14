@@ -31,7 +31,7 @@ function createRow(schoolData) {
         + '</td><td data-title = "School">'
         + schoolData.title
         + '</td><td data-title = "Phone">'
-        + schoolData.coordPhone
+        + '<a href="tel:' + schoolData.coordPhone + '">' + schoolData.coordPhone + '</a>'
         + '</td><td data-title = "Email">'
         + '<a href="mailto:' + schoolData.coordEmail + '?subject=TAFE SA Vet For School Student Enquiry">' + schoolData.coordEmail + '</a>'
         + '</td><td data-title = "Address">'
@@ -42,3 +42,6 @@ function createRow(schoolData) {
         newRow.innerHTML = tableBuild;
         tableBuild = "";
 }
+
+//
+//<a href="https://www.google.com/maps/@LATITUDE,LONGITUDE,ZOOMNUMBERz?hl=LANGUAGE">Visit W3Schools.com!</a>
