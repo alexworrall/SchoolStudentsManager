@@ -168,8 +168,8 @@ function createRow(schoolData) {
         + '<a href="mailto:' + schoolData.coordEmail + '?subject=TAFE SA Vet For School Student Enquiry">' + schoolData.coordEmail + '</a>'
         + '</td><td data-title = "Address">'
         + '<a href="https://www.google.com/maps/search/?api=1&query=' + schoolData.title.replace(/\s/g, '+') + '" target="_blank">' + schoolData.coordAddress + '</a>'
-        + '</td><td data-title = "Directions">'
-        + '<a href="https://www.google.com/maps/dir/?api=1&origin=Current+Location&destination=' + schoolData.title.replace(/\s/g, '+') + '" target="_blank"><img src="../img/directions.png" alt="Directions Image"></a>';
+        + '</td><td data-title = "Directions" class="directionsCell">'
+        + '<a href="https://www.google.com/maps/dir/?api=1&origin=My+Location&destination=' + schoolData.title.replace(/\s/g, '+') + '" target="_blank"><img src="../img/directions.png" alt="Directions Image"></a>';
 
         var newRow = tableRef.insertRow(-1);
         newRow.innerHTML = tableBuild;
