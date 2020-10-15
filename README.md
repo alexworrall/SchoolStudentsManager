@@ -15,18 +15,15 @@ School Students Manager is a cloud-enabled, mobile-ready, HTML and javascript po
   - Submitted feedback now gets added to Firestore Cloud
   - You are able to choose a students subject that you wish to leave feedback about
   - More detailed filtering of students based on chosen lecturer in feedback dropdown
-
-# Things to be added to the application
-
   - Directions to the coordinators from your current location
   - Be able to choose a coordinator without choosing a student first
-  - Fully migrate from Realtime database to Cloud Firestore
+  - Fully migrated from Realtime database to Cloud Firestore
 
 # External libraries and technologies
 
 School Students Manager uses a number external libraries and technologies to work:
 
-* <a href="https://firebase.google.com">Firebase</a> - Cloud based real time database used with API for retrieving all application information as JSON
+* <a href="https://firebase.google.com">Firebase</a> - Cloud firestore database used with API for retrieving all application information as collections and documents
 * <a href="https://developers.google.com/maps/documentation/javascript/overview">Google Maps Javascript API</a> for showing map information and user location
 * <a href="http://www.initializr.com/">HTML5 Boilerplate</a> - generator to help you getting started with a new HTML project
 
