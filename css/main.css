@@ -448,6 +448,10 @@ nav a:hover {
     margin-top: -15px;
 }
 
+.directionsCell{
+    text-align: center !important;
+}
+
 /* Keyframes for animations, included some for legacy browsers just in case */
 @keyframes mainMenuEntrance{
     from{
