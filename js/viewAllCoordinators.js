@@ -36,6 +36,3 @@ function createRow(schoolData) {
         newRow.innerHTML = tableBuild;
         tableBuild = "";
 }
-
-//https://www.google.com/maps/search/?api=1&query=pizza+seattle+wa
-//https://www.google.com/maps/dir/?api=1&origin=Space+Needle+Seattle+WA&destination=Pike+Place+Market+Seattle+WA&travelmode=bicycling
