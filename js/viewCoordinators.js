@@ -176,6 +176,3 @@ function createRow(schoolData) {
         newRow.innerHTML = tableBuild;
         tableBuild = "";
 }
-
-//https://www.google.com/maps/dir/?api=1&origin=Space+Needle+Seattle+WA&destination=Pike+Place+Market+Seattle+WA&travelmode=bicycling
-//https://www.google.com/maps?saddr=My+Location&daddr=760+West+Genesee+Street+Syracuse+NY+13204
