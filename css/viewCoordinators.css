@@ -54,9 +54,9 @@
     margin: 0 auto;
   }
   
-  .form > p {
-    /*text-align: right;*/
-  }
+  /*.form > p {
+    text-align: right;
+  }*/
   
   .form > p > a {
     color: #000;
