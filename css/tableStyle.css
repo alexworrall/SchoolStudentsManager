@@ -197,7 +197,7 @@ import Roboto Font ---------------------------- */
 @media screen and (max-width: 1220px) {
   .table-responsive-vertical > .table {
     margin-bottom: 0;
-    background-color: transparent;
+    /*background-color: transparent;*/
   }
   .table-responsive-vertical > .table > thead,
   .table-responsive-vertical > .table > tfoot {
