@@ -8,6 +8,7 @@ var urlsToCache = [
   '/SchoolStudentsManager/html/feedbackHistory.html',
   '/SchoolStudentsManager/html/generateFeedback.html',
   '/SchoolStudentsManager/html/viewCoordinators.html',
+  '/SchoolStudentsManager/html/viewAllCoordinators.html',
   '/SchoolStudentsManager/html/viewStudentList.html',
   '/SchoolStudentsManager/css/main.css',
   '/SchoolStudentsManager/css/generateFeedback.css',
@@ -21,6 +22,7 @@ var urlsToCache = [
   '/SchoolStudentsManager/js/feedback.js',
   '/SchoolStudentsManager/js/firebase.js',
   '/SchoolStudentsManager/js/viewCoordinators.js',
+  '/SchoolStudentsManager/js/viewAllCoordinators.js',
   '/SchoolStudentsManager/js/feedbackHistory.js',
   '/SchoolStudentsManager/js/viewStudentList.js'
 ];
